@@ -1,7 +1,7 @@
 {
-    "name": "@arkecosystem/crypto",
-    "version": "2.5.26",
-    "description": "Crypto utilities for the ARK Blockchain",
+    "name": "@tycoon69-labs/crypto",
+    "version": "2.5.27",
+    "description": "Crypto utilities for the T69 Blockchain",
     "license": "MIT",
     "contributors": [
         "François-Xavier Thoorens <fx.thoorens@ark.io>",
@@ -68,5 +68,6 @@
     },
     "publishConfig": {
         "access": "public"
-    }
+    },
+    "author": ""
 }
