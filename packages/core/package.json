@@ -59,7 +59,7 @@
     "@arkecosystem/core-utils": "^2.5.26",
     "@arkecosystem/core-wallet-api": "^2.5.26",
     "@arkecosystem/core-webhooks": "^2.5.26",
-    "@arkecosystem/crypto": "^2.5.26",
+    "@tycoon69-labs/crypto": "^2.5.27",
     "@oclif/command": "^1.5.16",
     "@oclif/config": "^1.13.2",
     "@oclif/plugin-autocomplete": "^0.1.1",

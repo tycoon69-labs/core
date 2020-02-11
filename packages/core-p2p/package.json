@@ -29,7 +29,7 @@
         "@arkecosystem/core-interfaces": "^2.5.26",
         "@arkecosystem/core-transaction-pool": "^2.5.26",
         "@arkecosystem/core-utils": "^2.5.26",
-        "@arkecosystem/crypto": "^2.5.26",
+        "@tycoon69-labs/crypto": "^2.5.27",
         "@hapi/boom": "^7.4.2",
         "@hapi/sntp": "^3.1.1",
         "ajv": "^6.10.2",

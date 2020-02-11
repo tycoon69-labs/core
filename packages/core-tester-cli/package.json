@@ -30,7 +30,7 @@
     "dependencies": {
         "@arkecosystem/core-forger": "^2.5.26",
         "@arkecosystem/core-utils": "^2.5.26",
-        "@arkecosystem/crypto": "^2.5.26",
+        "@tycoon69-labs/crypto": "^2.5.27",
         "@oclif/command": "^1.5.16",
         "@oclif/config": "^1.13.2",
         "@oclif/plugin-help": "^2.2.0",
