@@ -3,7 +3,7 @@ import { ApplicationEvents } from "@arkecosystem/core-event-emitter";
 import { Database, EventEmitter, Logger, Shared, State } from "@arkecosystem/core-interfaces";
 import { Handlers } from "@arkecosystem/core-transactions";
 import { roundCalculator } from "@arkecosystem/core-utils";
-import { Blocks, Crypto, Identities, Interfaces, Managers, Transactions, Utils } from "@arkecosystem/crypto";
+import { Blocks, Crypto, Identities, Interfaces, Managers, Transactions, Utils } from "@tycoon69-labs/crypto";
 import assert from "assert";
 
 export class DatabaseService implements Database.IDatabaseService {

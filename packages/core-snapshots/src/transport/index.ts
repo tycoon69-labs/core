@@ -7,7 +7,7 @@ import zlib from "zlib";
 
 import { app } from "@arkecosystem/core-container";
 import { EventEmitter, Logger } from "@arkecosystem/core-interfaces";
-import { Managers } from "@arkecosystem/crypto";
+import { Managers } from "@tycoon69-labs/crypto";
 
 import * as utils from "../utils";
 import { Codec } from "./codec";

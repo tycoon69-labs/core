@@ -1,5 +1,5 @@
 import { app } from "@arkecosystem/core-container";
-import { Crypto } from "@arkecosystem/crypto";
+import { Crypto } from "@tycoon69-labs/crypto";
 import Hapi, { ServerMethod } from "@hapi/hapi";
 
 export class ServerCache {

@@ -1,4 +1,4 @@
-import { Enums, Transactions } from "@arkecosystem/crypto";
+import { Enums, Transactions } from "@tycoon69-labs/crypto";
 
 import { DelegateRegistrationTransactionHandler } from "./delegate-registration";
 import { DelegateResignationTransactionHandler } from "./delegate-resignation";

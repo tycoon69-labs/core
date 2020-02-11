@@ -1,6 +1,6 @@
 import { app } from "@arkecosystem/core-container";
 import { Database } from "@arkecosystem/core-interfaces";
-import { Crypto, Managers } from "@arkecosystem/crypto";
+import { Crypto, Managers } from "@tycoon69-labs/crypto";
 import Hapi from "@hapi/hapi";
 import { Controller } from "../shared/controller";
 

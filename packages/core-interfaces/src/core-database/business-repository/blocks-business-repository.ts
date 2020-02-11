@@ -1,4 +1,4 @@
-import { Interfaces } from "@arkecosystem/crypto";
+import { Interfaces } from "@tycoon69-labs/crypto";
 import { ISearchPaginate } from "../search";
 import { IParameters } from "./parameters";
 

@@ -1,4 +1,4 @@
-import { Interfaces } from "@arkecosystem/crypto";
+import { Interfaces } from "@tycoon69-labs/crypto";
 
 export interface IProcessor {
     validate(transactions: Interfaces.ITransactionData[]): Promise<IProcessorResult>;

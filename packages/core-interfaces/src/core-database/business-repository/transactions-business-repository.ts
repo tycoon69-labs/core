@@ -1,4 +1,4 @@
-import { Enums, Interfaces } from "@arkecosystem/crypto";
+import { Enums, Interfaces } from "@tycoon69-labs/crypto";
 import { IWallet } from "../../core-state/wallets";
 import { IParameters } from "./parameters";
 

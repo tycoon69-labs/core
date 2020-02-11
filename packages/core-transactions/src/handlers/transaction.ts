@@ -2,7 +2,7 @@
 // tslint:disable:member-ordering
 
 import { Database, EventEmitter, State, TransactionPool } from "@arkecosystem/core-interfaces";
-import { Enums, Interfaces, Managers, Transactions } from "@arkecosystem/crypto";
+import { Enums, Interfaces, Managers, Transactions } from "@tycoon69-labs/crypto";
 import {
     InsufficientBalanceError,
     InvalidMultiSignatureError,

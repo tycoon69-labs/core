@@ -1,6 +1,6 @@
 import { app } from "@arkecosystem/core-container";
 import { State } from "@arkecosystem/core-interfaces";
-import { Crypto, Enums, Interfaces, Managers, Utils } from "@arkecosystem/crypto";
+import { Crypto, Enums, Interfaces, Managers, Utils } from "@tycoon69-labs/crypto";
 import assert from "assert";
 
 export class Memory {

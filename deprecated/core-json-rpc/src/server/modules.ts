@@ -1,4 +1,4 @@
-import { Crypto, Identities, Interfaces, Transactions } from "@arkecosystem/crypto";
+import { Crypto, Identities, Interfaces, Transactions } from "@tycoon69-labs/crypto";
 import Boom from "@hapi/boom";
 import { generateMnemonic } from "bip39";
 import { IWallet } from "../interfaces";

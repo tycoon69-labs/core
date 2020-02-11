@@ -1,5 +1,5 @@
 import { delegateCalculator, formatTimestamp } from "@arkecosystem/core-utils";
-import { Utils } from "@arkecosystem/crypto";
+import { Utils } from "@tycoon69-labs/crypto";
 
 export const transformDelegate = delegate => {
     const data = {

@@ -1,4 +1,4 @@
-import { Interfaces, Managers } from "@arkecosystem/crypto";
+import { Interfaces, Managers } from "@tycoon69-labs/crypto";
 import bs58check from "bs58check";
 
 export const isRecipientOnActiveNetwork = (transaction: Interfaces.ITransactionData): boolean => {

@@ -1,4 +1,4 @@
-import { Identities } from "@arkecosystem/crypto";
+import { Identities } from "@tycoon69-labs/crypto";
 
 export {};
 

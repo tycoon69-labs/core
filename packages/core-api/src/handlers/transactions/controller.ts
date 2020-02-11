@@ -1,6 +1,6 @@
 import { app } from "@arkecosystem/core-container";
 import { P2P, TransactionPool } from "@arkecosystem/core-interfaces";
-import { Enums, Interfaces } from "@arkecosystem/crypto";
+import { Enums, Interfaces } from "@tycoon69-labs/crypto";
 import Boom from "@hapi/boom";
 import Hapi from "@hapi/hapi";
 import { Controller } from "../shared/controller";

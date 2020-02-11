@@ -1,4 +1,4 @@
-import { Identities, Transactions, Utils } from "@arkecosystem/crypto";
+import { Identities, Transactions, Utils } from "@tycoon69-labs/crypto";
 
 export class Signer {
     protected network: number;
