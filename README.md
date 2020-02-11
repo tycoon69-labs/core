@@ -15,6 +15,23 @@
         cd ~
         bash <(curl -s https://raw.githubusercontent.com/tycoon69-labs/core/chore/bridgechain-changes/install.sh)
 
+## Command Line
+-   Start/Stop/Restart Relay
+
+        tycoon relay:start(stop/restart)
+
+-   Config forger
+        
+        tycoon config:forger
+        
+-   Start/Stop/Restart Forger
+
+        tycoon forger:start(stop/restart)
+        
+-   Status of node
+        
+        pm2 list
+        
 ## Introduction
 
 > This repository contains all plugins that make up the T69 Core(forked from ARK Core)
