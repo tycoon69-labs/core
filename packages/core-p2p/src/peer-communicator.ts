@@ -29,7 +29,7 @@ export class PeerCommunicator implements P2P.IPeerCommunicator {
             );
             blocks = [];
         }
-
+ 
         return blocks;
     }
 
