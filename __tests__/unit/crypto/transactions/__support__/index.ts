@@ -1,10 +1,10 @@
 import "jest-extended";
 
-import { TransactionTypeError } from "@arkecosystem/crypto/src/errors";
-import { Keys } from "@arkecosystem/crypto/src/identities";
-import { ITransaction } from "@arkecosystem/crypto/src/interfaces";
-import { configManager } from "@arkecosystem/crypto/src/managers";
-import { BuilderFactory } from "@arkecosystem/crypto/src/transactions";
+import { TransactionTypeError } from "@tycoon69-labs/crypto/src/errors";
+import { Keys } from "@tycoon69-labs/crypto/src/identities";
+import { ITransaction } from "@tycoon69-labs/crypto/src/interfaces";
+import { configManager } from "@tycoon69-labs/crypto/src/managers";
+import { BuilderFactory } from "@tycoon69-labs/crypto/src/transactions";
 
 export const createRandomTx = type => {
     let transaction: ITransaction;
@@ -13,7 +13,7 @@ export const createRandomTx = type => {
         case 0: {
             // transfer
             transaction = BuilderFactory.transfer()
-                .recipientId("DJLxkgm7JMortrGVh1ZrvDH39XALWLa83e")
+                .recipientId("AJWRd23HNEhPLkK1ymMnwnDBX2a7QBZqff")
                 .amount("10000000000000")
                 .vendorField(Math.random().toString(36))
                 .sign(Math.random().toString(36))
@@ -50,7 +50,9 @@ export const createRandomTx = type => {
         }
 
         case 4: {
+            const aip11 = configManager.getMilestone().aip11;
             configManager.getMilestone().aip11 = true;
+
             const passphrases = [Math.random().toString(36), Math.random().toString(36), Math.random().toString(36)];
 
             const participants = passphrases.map(passphrase => {
@@ -64,19 +66,19 @@ export const createRandomTx = type => {
                 Math.floor(Math.random() * (max - min)) + min,
             );
 
-            participants.forEach(participant => {
+            for (const participant of participants) {
                 multiSigRegistration.participant(participant.publicKey);
-            });
+            }
 
             multiSigRegistration.senderPublicKey(participants[0].publicKey);
 
-            passphrases.forEach((passphrase, index) => {
-                multiSigRegistration.multiSign(passphrase, index);
-            });
+            for (const passphrase of passphrases) {
+                multiSigRegistration.multiSign(passphrase, passphrases.indexOf(passphrase));
+            }
 
             transaction = multiSigRegistration.sign(passphrases[0]).build();
 
-            configManager.getMilestone().aip11 = false;
+            configManager.getMilestone().aip11 = aip11;
             break;
         }
         default: {

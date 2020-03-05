@@ -1,6 +1,6 @@
 import "jest-extended";
 
-import { InvalidMultiSignatureAssetError, PublicKeyError } from "@arkecosystem/crypto/src/errors";
+import { InvalidMultiSignatureAssetError, PublicKeyError } from "@tycoon69-labs/crypto/src/errors";
 import { PublicKey } from "../../../../packages/crypto/src/identities/public-key";
 import { configManager } from "../../../../packages/crypto/src/managers";
 import { data, passphrase } from "./fixture.json";
@@ -64,14 +64,14 @@ describe("Identities - Public Key", () => {
                 ],
             ];
 
-            permutations.forEach(publicKeys => {
+            for (const publicKeys of permutations) {
                 publicKeySet.add(
                     PublicKey.fromMultiSignatureAsset({
                         min: 2,
                         publicKeys,
                     }),
                 );
-            });
+            }
 
             expect([...publicKeySet]).toHaveLength(1);
         });

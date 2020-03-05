@@ -1,6 +1,6 @@
 import { Enums } from "@tycoon69-labs/crypto";
 
-const { DelegateRegistration } = Enums.TransactionTypes;
+const { DelegateRegistration } = Enums.TransactionType;
 
 export {};
 

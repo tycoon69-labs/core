@@ -1,12 +1,12 @@
 import "../../../../../packages/core-jest-matchers/src/transactions/types/second-signature";
 
-import { Enums } from "@arkecosystem/crypto";
-const { TransactionTypes } = Enums;
+import { Enums } from "@tycoon69-labs/crypto";
+const { TransactionType } = Enums;
 
 describe(".toBeSecondSignatureType", () => {
     test("passes when given a valid transaction", () => {
         expect({
-            type: TransactionTypes.SecondSignature,
+            type: TransactionType.SecondSignature,
         }).toBeSecondSignatureType();
     });
 

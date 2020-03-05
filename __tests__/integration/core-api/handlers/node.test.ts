@@ -1,7 +1,7 @@
 import "../../../utils";
 
 import { app } from "@arkecosystem/core-container";
-import { Managers } from "@arkecosystem/crypto";
+import { Managers } from "@tycoon69-labs/crypto";
 import { setUp, tearDown } from "../__support__/setup";
 import { utils } from "../utils";
 
@@ -41,6 +41,7 @@ describe("API 2.0 - Loader", () => {
             expect(response).toBeSuccessfulResponse();
             expect(response.data.data).toBeObject();
 
+            expect(response.data.data.core).toBeObject();
             expect(response.data.data.nethash).toBeString();
             expect(response.data.data.slip44).toBeNumber();
             expect(response.data.data.wif).toBeNumber();
@@ -75,7 +76,7 @@ describe("API 2.0 - Loader", () => {
             const response = await utils.request("GET", "node/fees", { days: 14 });
             expect(response).toBeSuccessfulResponse();
             expect(response.data.meta.days).toBe(14);
-            expect(response.data.data).toBeArray();
+            expect(response.data.data).toBeObject();
         });
     });
 });

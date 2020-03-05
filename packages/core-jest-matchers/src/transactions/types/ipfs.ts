@@ -1,6 +1,6 @@
 import { Enums } from "@tycoon69-labs/crypto";
 
-const { Ipfs } = Enums.TransactionTypes;
+const { Ipfs } = Enums.TransactionType;
 
 export {};
 

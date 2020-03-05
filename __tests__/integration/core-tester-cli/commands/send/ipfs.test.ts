@@ -1,10 +1,11 @@
 import "jest-extended";
 
 import { httpie } from "@arkecosystem/core-utils";
-import { Managers } from "@arkecosystem/crypto";
+import { Identities, Managers } from "@tycoon69-labs/crypto";
 import nock from "nock";
 import { IpfsCommand } from "../../../../../packages/core-tester-cli/src/commands/send/ipfs";
 import { arkToSatoshi, captureTransactions, toFlags } from "../../shared";
+import { nodeStatusResponse } from "./fixtures";
 
 beforeEach(() => {
     // Just passthru. We'll test the Command class logic in its own test file more thoroughly
@@ -17,6 +18,11 @@ beforeEach(() => {
         .get("/api/node/configuration/crypto")
         .thrice()
         .reply(200, { data: Managers.configManager.getPreset("unitnet") });
+
+    nock("http://localhost:4003")
+        .get("/api/node/status")
+        .thrice()
+        .reply(200, nodeStatusResponse);
 
     jest.spyOn(httpie, "get");
     jest.spyOn(httpie, "post");
@@ -45,7 +51,11 @@ describe("Commands - Ipfs", () => {
             .filter(tx => tx.type === 5)
             .map(tx => {
                 expect(tx.fee).toEqual(arkToSatoshi(opts.ipfsFee));
-                expect(tx.asset.ipfs).toEqual(`Qm${tx.senderPublicKey.slice(0, 44)}`);
+                expect(tx.asset.ipfs).toEqual(
+                    `Qm${Identities.Address.fromPublicKey(tx.senderPublicKey)
+                        .repeat(2)
+                        .slice(0, 44)}`,
+                );
             });
     });
 
@@ -65,7 +75,11 @@ describe("Commands - Ipfs", () => {
             .filter(tx => tx.type === 5)
             .map(tx => {
                 expect(tx.fee).toEqual(arkToSatoshi(5));
-                expect(tx.asset.ipfs).toEqual(`Qm${tx.senderPublicKey.slice(0, 44)}`);
+                expect(tx.asset.ipfs).toEqual(
+                    `Qm${Identities.Address.fromPublicKey(tx.senderPublicKey)
+                        .repeat(2)
+                        .slice(0, 44)}`,
+                );
             });
     });
 });

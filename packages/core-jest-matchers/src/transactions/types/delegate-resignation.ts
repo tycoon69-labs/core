@@ -1,5 +1,5 @@
 import { Enums } from "@tycoon69-labs/crypto";
-const { DelegateResignation } = Enums.TransactionTypes;
+const { DelegateResignation } = Enums.TransactionType;
 
 export {};
 
