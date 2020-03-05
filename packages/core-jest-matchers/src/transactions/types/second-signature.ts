@@ -1,6 +1,6 @@
 import { Enums } from "@tycoon69-labs/crypto";
 
-const { SecondSignature } = Enums.TransactionTypes;
+const { SecondSignature } = Enums.TransactionType;
 
 export {};
 

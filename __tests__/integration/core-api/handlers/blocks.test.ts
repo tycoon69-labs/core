@@ -3,7 +3,7 @@ import "../../../utils";
 import { setUp, tearDown } from "../__support__/setup";
 import { utils } from "../utils";
 
-import { Blocks } from "@arkecosystem/crypto";
+import { Blocks } from "@tycoon69-labs/crypto";
 import { genesisBlock } from "../../../utils/config/testnet/genesisBlock";
 import { blocks2to100 } from "../../../utils/fixtures";
 import { resetBlockchain } from "../../../utils/helpers";
@@ -35,11 +35,29 @@ describe("API 2.0 - Blocks", () => {
                 transactions: genesisBlock.numberOfTransactions,
             });
         });
+
+        it("should give correct meta data", async () => {
+            const response = await utils.request("GET", "blocks");
+            expect(response).toBeSuccessfulResponse();
+
+            const expectedMeta = {
+                count: 1,
+                first: "/blocks?transform=true&page=1&limit=100",
+                last: "/blocks?transform=true&page=1&limit=100",
+                next: null,
+                pageCount: 1,
+                previous: null,
+                self: "/blocks?transform=true&page=1&limit=100",
+                totalCount: 1,
+                totalCountIsEstimate: false,
+            };
+            expect(response.data.meta).toEqual(expectedMeta);
+        });
     });
 
-    describe("GET /blocks?orderBy=height:", () => {
+    describe("GET /blocks?orderBy=height:desc", () => {
         it("should GET all the blocks in descending order", async () => {
-            const response = await utils.request("GET", "blocks?orderBy=height:");
+            const response = await utils.request("GET", "blocks", { orderBy: "height:desc" });
 
             expect(response).toBeSuccessfulResponse();
             expect(response).toBePaginated();
@@ -153,13 +171,13 @@ describe("API 2.0 - Blocks", () => {
             utils.expectTransaction(transaction);
             expect(transaction.blockId).toBe(genesisBlock.id);
         });
-
-        it("should fail to GET all the transactions for the given block by id if it doesn't exist", async () => {
-            utils.expectError(await utils.request("GET", "blocks/27184958558311101492/transactions"), 404);
-        });
     });
 
     describe("GET /blocks/:height/transactions", () => {
+        it("should fail to GET all the transactions for the given block by id if it doesn't exist", async () => {
+            utils.expectError(await utils.request("GET", "blocks/27184958558311101492/transactions"), 404);
+        });
+
         it("should GET all the transactions for the given block by height", async () => {
             const response = await utils.request("GET", `blocks/${genesisBlock.height}/transactions`);
             expect(response).toBeSuccessfulResponse();

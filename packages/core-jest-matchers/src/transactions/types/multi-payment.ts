@@ -1,6 +1,6 @@
 import { Enums } from "@tycoon69-labs/crypto";
 
-const { MultiPayment } = Enums.TransactionTypes;
+const { MultiPayment } = Enums.TransactionType;
 
 export {};
 

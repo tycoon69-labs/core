@@ -1,4 +1,4 @@
-import { Identities } from "@arkecosystem/crypto";
+import { Identities } from "@tycoon69-labs/crypto";
 import { TransactionFactory } from "../../helpers/transaction-factory";
 import { secrets } from "../../utils/config/testnet/delegates.json";
 import * as support from "./__support__";
@@ -62,7 +62,7 @@ describe("Transaction Forging - Second Signature Registration", () => {
             .withPassphraseList(passphrases)
             .createOne();
 
-        await expect(secondSignature.id).toBeRejected();
+        await expect(secondSignature).toBeRejected();
         await support.snoozeForBlock(1);
         await expect(secondSignature.id).not.toBeForged();
 

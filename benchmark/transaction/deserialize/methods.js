@@ -3,5 +3,5 @@ const {
 } = require('@tycoon69-labs/crypto')
 
 exports.deserialize = data => {
-    return Transactions.deserializer.deserialize(data)
+    return Transactions.Deserializer.deserialize(data)
 }

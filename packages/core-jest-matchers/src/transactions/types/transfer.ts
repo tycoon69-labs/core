@@ -1,6 +1,6 @@
 import { Enums } from "@tycoon69-labs/crypto";
 
-const { Transfer } = Enums.TransactionTypes;
+const { Transfer } = Enums.TransactionType;
 
 export {};
 

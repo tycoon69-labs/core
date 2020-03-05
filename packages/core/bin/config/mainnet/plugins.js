@@ -1,7 +1,13 @@
 module.exports = {
     "@arkecosystem/core-event-emitter": {},
     "@arkecosystem/core-logger-pino": {},
+    "@arkecosystem/core-p2p": {
+        server: {
+            port: process.env.CORE_P2P_PORT || 4002,
+        },
+    },
     "@arkecosystem/core-state": {},
+    
     "@arkecosystem/core-database-postgres": {
         connection: {
             host: process.env.CORE_DB_HOST || "localhost",
@@ -16,7 +22,7 @@ module.exports = {
         maxTransactionsPerSender: process.env.CORE_TRANSACTION_POOL_MAX_PER_SENDER || 300,
         allowedSenders: [],
         dynamicFees: {
-            enabled: true,
+            enabled: false,
             minFeePool: 3000,
             minFeeBroadcast: 3000,
             addonBytes: {
@@ -26,15 +32,9 @@ module.exports = {
                 vote: 100,
                 multiSignature: 500,
                 ipfs: 250,
-                timelockTransfer: 500,
                 multiPayment: 500,
                 delegateResignation: 400000,
             },
-        },
-    },
-    "@arkecosystem/core-p2p": {
-        server: {
-            port: process.env.CORE_P2P_PORT || 4002,
         },
     },
     "@arkecosystem/core-blockchain": {},

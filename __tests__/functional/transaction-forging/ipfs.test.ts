@@ -1,4 +1,4 @@
-import { Identities } from "@arkecosystem/crypto";
+import { Identities } from "@tycoon69-labs/crypto";
 import { TransactionFactory } from "../../helpers/transaction-factory";
 import { secrets } from "../../utils/config/testnet/delegates.json";
 import * as support from "./__support__";
@@ -15,24 +15,37 @@ beforeAll(support.setUp);
 afterAll(support.tearDown);
 
 describe("Transaction Forging - IPFS", () => {
-    it("should broadcast, accept and forge it [Signed with 1 Passphase]", async () => {
-        // Initial Funds
-        const initialFunds = TransactionFactory.transfer(Identities.Address.fromPassphrase(passphrase), 100 * 1e8)
-            .withPassphrase(secrets[0])
-            .createOne();
+    describe("Signed with 1 Passphase", () => {
+        it("should broadcast, accept and forge it", async () => {
+            // Initial Funds
+            const initialFunds = TransactionFactory.transfer(Identities.Address.fromPassphrase(passphrase), 100 * 1e8)
+                .withPassphrase(secrets[0])
+                .createOne();
 
-        await expect(initialFunds).toBeAccepted();
-        await support.snoozeForBlock(1);
-        await expect(initialFunds.id).toBeForged();
+            await expect(initialFunds).toBeAccepted();
+            await support.snoozeForBlock(1);
+            await expect(initialFunds.id).toBeForged();
 
-        // Submit ipfs transaction
-        const transactions = TransactionFactory.ipfs(ipfsIds[0])
-            .withPassphrase(passphrase)
-            .createOne();
+            // Submit ipfs transaction
+            const transactions = TransactionFactory.ipfs(ipfsIds[0])
+                .withPassphrase(passphrase)
+                .createOne();
 
-        await expect(transactions).toBeAccepted();
-        await support.snoozeForBlock(1);
-        await expect(transactions.id).toBeForged();
+            await expect(transactions).toBeAccepted();
+            await support.snoozeForBlock(1);
+            await expect(transactions.id).toBeForged();
+        });
+
+        it("should broadcast, reject and not forge it if the hash is already registered on the blockchain", async () => {
+            // Submit ipfs transaction again
+            const transactions = TransactionFactory.ipfs(ipfsIds[0])
+                .withPassphrase(passphrase)
+                .createOne();
+
+            await expect(transactions).toBeRejected();
+            await support.snoozeForBlock(1);
+            await expect(transactions.id).not.toBeForged();
+        });
     });
 
     it("should broadcast, accept and forge it [Signed with 2 Passphrases]", async () => {
@@ -107,7 +120,7 @@ describe("Transaction Forging - IPFS", () => {
         await expect(multiSignatureFunds.id).toBeForged();
 
         // Submit ipfs transaction
-        const transactions = TransactionFactory.ipfs(ipfsIds[0])
+        const transactions = TransactionFactory.ipfs(ipfsIds[2])
             .withSenderPublicKey(multiSigPublicKey)
             .withPassphraseList(passphrases)
             .createOne();

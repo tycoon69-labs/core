@@ -1,4 +1,4 @@
-import { Identities } from "@arkecosystem/crypto";
+import { Identities } from "@tycoon69-labs/crypto";
 import { TransactionFactory } from "../../helpers/transaction-factory";
 import { secrets } from "../../utils/config/testnet/delegates.json";
 import * as support from "./__support__";
@@ -106,7 +106,7 @@ describe("Transaction Forging - Delegate Registration", () => {
             .withPassphraseList(passphrases)
             .createOne();
 
-        await expect(delegateRegistration.id).toBeRejected();
+        await expect(delegateRegistration).toBeRejected();
         await support.snoozeForBlock(1);
         await expect(delegateRegistration.id).not.toBeForged();
 

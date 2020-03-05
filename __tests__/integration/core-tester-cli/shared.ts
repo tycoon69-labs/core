@@ -1,5 +1,5 @@
 import { httpie } from "@arkecosystem/core-utils";
-import { Utils } from "@arkecosystem/crypto";
+import { Utils } from "@tycoon69-labs/crypto";
 
 const defaultOpts = ["--skipProbing"];
 
@@ -9,7 +9,7 @@ export const toFlags = (opts: object): string[] => {
         .reduce((a, b) => a.concat(b), defaultOpts);
 };
 
-export const arkToSatoshi = value => Utils.BigNumber.make(value).times(1e8);
+export const arkToSatoshi = value => Utils.BigNumber.make(value * 1e8);
 
 export const expectTransactions = (transactions, obj) =>
     expect(transactions).toEqual(expect.arrayContaining([expect.objectContaining(obj)]));
