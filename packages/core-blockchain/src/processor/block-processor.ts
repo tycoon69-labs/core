@@ -41,6 +41,8 @@ export class BlockProcessor {
         }
 
         if (!(await this.verifyBlock(block))) {
+            this.logger.info("Block info");
+            this.logger.info(JSON.stringify(block, undefined, 4));
             return new VerificationFailedHandler(this.blockchain, block);
         }
 
@@ -79,9 +81,6 @@ export class BlockProcessor {
                         transaction.typeGroup,
                     );
                     await handler.verify(transaction, this.blockchain.database.walletManager);
-                    
-                    this.logger.info("Transaction");
-                    this.logger.info(JSON.stringify(transaction, undefined, 4));
                 }
 
                 block.verification = block.verify();
