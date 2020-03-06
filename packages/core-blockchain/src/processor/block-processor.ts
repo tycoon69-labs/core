@@ -79,12 +79,12 @@ export class BlockProcessor {
                         transaction.typeGroup,
                     );
                     await handler.verify(transaction, this.blockchain.database.walletManager);
+                    
+                    this.logger.info("Transaction");
+                    this.logger.info(JSON.stringify(transaction, undefined, 4));
                 }
 
                 block.verification = block.verify();
-                if (block.verification.verified === false) {
-                    this.logger.info(JSON.stringify(block, undefined, 4))
-                }
             } catch (error) {
                 this.logger.warn(`Failed to verify block, because: ${error.message}`);
                 block.verification.verified = false;
