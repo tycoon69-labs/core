@@ -77,7 +77,8 @@ export class TransactionFactory {
 
     private static fromSerialized(serialized: string, strict: boolean = true): ITransaction {
         try {
-            const transaction = Deserializer.deserialize(serialized);
+            const options: IDeserializeOptions | ISerializeOptions = { acceptLegacyVersion: true };
+            const transaction = Deserializer.deserialize(serialized, options);
             transaction.data.id = Utils.getId(transaction.data);
 
             const { value, error } = Verifier.verifySchema(transaction.data, strict);
