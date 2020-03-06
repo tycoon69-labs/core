@@ -79,7 +79,7 @@ export class TransactionFactory {
         try {
             const options: IDeserializeOptions | ISerializeOptions = { acceptLegacyVersion: true };
             const transaction = Deserializer.deserialize(serialized, options);
-            transaction.data.id = Utils.getId(transaction.data);
+            transaction.data.id = Utils.getId(transaction.data, options);
 
             const { value, error } = Verifier.verifySchema(transaction.data, strict);
 
