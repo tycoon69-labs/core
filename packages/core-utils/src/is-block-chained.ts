@@ -7,7 +7,7 @@ export const isBlockChained = (
     logger?: Logger.ILogger): boolean => {
 
     if (logger) {
-        logger.info(`nextBlock.previousBlock=${nextBlock.previousBlock}, previousBlock.id=&{previousBlock.id}`);
+        logger.info(`nextBlock.previousBlock=${nextBlock.previousBlock}, previousBlock.id=${previousBlock.id}`);
         logger.info(typeof nextBlock.previousBlock);
         logger.info(typeof previousBlock.id);
     }
