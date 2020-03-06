@@ -48,7 +48,7 @@ RPM=$(which yum || :)
 SYS=$([[ -L "/sbin/init" ]] && echo 'SystemD' || echo 'SystemV')
 
 # Detect Debian/Ubuntu derivative
-DEB_ID=$( (grep DISTRIB_CODENAME /etc/upstream-release/lsb-release || grep DISTRIB_CODENAME /etc/lsb-release) 2>/dev/null | cut -d'=' -f2 )
+# DEB_ID=$( (grep DISTRIB_CODENAME /etc/upstream-release/lsb-release || grep DISTRIB_CODENAME /etc/lsb-release) 2>/dev/null | cut -d'=' -f2 )
 
 if [[ ! -z $DEB ]]; then
     success "Running install for Debian derivative"
@@ -110,7 +110,7 @@ sudo rm -rf ~/{.npm,.forever,.node*,.cache,.nvm}
 
 if [[ ! -z $DEB ]]; then
     sudo wget --quiet -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
-    (echo "deb https://deb.nodesource.com/node_12.x ${DEB_ID} main" | sudo tee /etc/apt/sources.list.d/nodesource.list)
+    (echo "deb https://deb.nodesource.com/node_12.x ${lsb_release -s -c} main" | sudo tee /etc/apt/sources.list.d/nodesource.list)
     sudo apt-get update
     sudo apt-get install nodejs -y
 
