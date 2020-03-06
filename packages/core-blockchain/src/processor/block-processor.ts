@@ -40,6 +40,9 @@ export class BlockProcessor {
             return new ExceptionHandler(this.blockchain, block);
         }
 
+        this.logger.info("Before verify block");
+        this.logger.info(JSON.stringify(block, undefined, 4));
+
         if (!(await this.verifyBlock(block))) {
             this.logger.info("Block info");
             this.logger.info(JSON.stringify(block, undefined, 4));
