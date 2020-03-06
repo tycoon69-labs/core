@@ -82,6 +82,9 @@ export class BlockProcessor {
                 }
 
                 block.verification = block.verify();
+                if (block.verification.verified === false) {
+                    this.logger.info(JSON.stringify(block, undefined, 4))
+                }
             } catch (error) {
                 this.logger.warn(`Failed to verify block, because: ${error.message}`);
                 block.verification.verified = false;
