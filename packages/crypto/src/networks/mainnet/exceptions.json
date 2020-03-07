@@ -1,8 +1,6 @@
 {
-  "blocks": [
-    "6856442918494056426"
-  ],
-  "transactions": ["45151b9c58bd8e20c35118f336ec8d070fa24b854e03ebc1298b5bc18966eb07"],
+  "blocks": [],
+  "transactions": [],
   "outlookTable": {},
   "transactionIdFixTable": {},
   "wrongTransactionOrder": {

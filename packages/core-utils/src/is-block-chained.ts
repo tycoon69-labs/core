@@ -6,12 +6,6 @@ export const isBlockChained = (
     nextBlock: Interfaces.IBlockData,
     logger?: Logger.ILogger): boolean => {
 
-    if (logger) {
-        logger.info(`nextBlock.previousBlock=${nextBlock.previousBlock}, previousBlock.id=${previousBlock.id}`);
-        logger.info(typeof nextBlock.previousBlock);
-        logger.info(typeof previousBlock.id);
-    }
-
     const followsPrevious: boolean = nextBlock.previousBlock === previousBlock.id;
     const isPlusOne: boolean = nextBlock.height === previousBlock.height + 1;
 
