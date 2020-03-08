@@ -410,6 +410,8 @@ export class Blockchain implements blockchain.IBlockchain {
         let forkBlock: Interfaces.IBlock;
         let lastProcessedBlock: Interfaces.IBlock;
         for (const block of blocks) {
+            logger.info(JSON.stringify(block, undefined, 4));
+            
             const blockInstance = Blocks.BlockFactory.fromData(block);
             lastProcessResult = await this.blockProcessor.process(blockInstance);
             lastProcessedBlock = blockInstance;
