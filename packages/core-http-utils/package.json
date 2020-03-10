@@ -20,7 +20,7 @@
     "dependencies": {
         "@arkecosystem/core-container": "^2.6.11",
         "@arkecosystem/core-utils": "^2.6.11",
-        "@tycoon69-labs/crypto": "^2.6.11",
+        "@tycoon69-labs/crypto": "^2.6.13",
         "@hapi/boom": "^8.0.0",
         "@hapi/good": "^8.2.0",
         "@hapi/good-console": "^8.1.0",

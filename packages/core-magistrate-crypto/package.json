@@ -21,7 +21,7 @@
         "prepublishOnly": "yarn build"
     },
     "dependencies": {
-        "@tycoon69-labs/crypto": "^2.6.11",
+        "@tycoon69-labs/crypto": "^2.6.13",
         "bytebuffer": "^5.0.1"
     },
     "publishConfig": {

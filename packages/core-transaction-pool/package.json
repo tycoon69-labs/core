@@ -31,7 +31,7 @@
         "@arkecosystem/core-state": "^2.6.11",
         "@arkecosystem/core-transactions": "^2.6.11",
         "@arkecosystem/core-utils": "^2.6.11",
-        "@tycoon69-labs/crypto": "^2.6.11",
+        "@tycoon69-labs/crypto": "^2.6.13",
         "@types/better-sqlite3": "^5.4.0",
         "@types/fs-extra": "^8.0.0",
         "@types/pluralize": "^0.0.29",

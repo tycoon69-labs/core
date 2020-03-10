@@ -21,7 +21,7 @@
         "@arkecosystem/core-container": "^2.6.11",
         "@arkecosystem/core-http-utils": "^2.6.11",
         "@arkecosystem/core-utils": "^2.6.11",
-        "@tycoon69-labs/crypto": "^2.6.11",
+        "@tycoon69-labs/crypto": "^2.6.13",
         "@hapi/vision": "^5.5.4",
         "handlebars": "^4.1.2"
     },
