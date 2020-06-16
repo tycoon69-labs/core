@@ -1,6 +1,6 @@
 import "../../mocks/core-container";
 
-import { Crypto } from "@arkecosystem/crypto";
+import { Crypto } from "@tycoon69-labs/crypto";
 import { replySchemas } from "../../../../../packages/core-p2p/src/schemas";
 import { validate } from "../../../../../packages/core-p2p/src/socket-server/utils/validate";
 import { getStatus } from "../../../../../packages/core-p2p/src/socket-server/versions/peer";

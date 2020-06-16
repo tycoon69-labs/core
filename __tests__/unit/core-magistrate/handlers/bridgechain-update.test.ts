@@ -5,7 +5,7 @@ import { Builders as MagistrateBuilders } from "@arkecosystem/core-magistrate-cr
 import { IBusinessWalletAttributes } from "@arkecosystem/core-magistrate-transactions/src/interfaces";
 import { Wallets } from "@arkecosystem/core-state";
 import { Handlers } from "@arkecosystem/core-transactions";
-import { Managers, Utils } from "@arkecosystem/crypto";
+import { Managers, Utils } from "@tycoon69-labs/crypto";
 import {
     BridgechainIsNotRegisteredByWalletError,
     BusinessIsNotRegisteredError,

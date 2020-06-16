@@ -1,6 +1,6 @@
 "use strict";
 
-const { Managers, Utils, Identities, Crypto } = require("@arkecosystem/crypto");
+const { Managers, Utils, Identities, Crypto } = require("@tycoon69-labs/crypto");
 const utils = require("./utils");
 const shared = require("./shared");
 const testUtils = require("../../../../lib/utils/test-utils");

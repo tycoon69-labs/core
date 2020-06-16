@@ -1,5 +1,5 @@
 import { Container, Database } from "@arkecosystem/core-interfaces";
-import { Identities, Managers, Networks, Utils } from "@arkecosystem/crypto";
+import { Identities, Managers, Networks, Utils } from "@tycoon69-labs/crypto";
 import { StateBuilder } from "../../../../packages/core-database-postgres/src";
 import { Delegate } from "../../../../packages/core-forger/src/delegate";
 import { WalletManager } from "../../../../packages/core-state/src/wallets";

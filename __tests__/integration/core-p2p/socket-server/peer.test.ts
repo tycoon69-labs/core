@@ -3,8 +3,8 @@ import "jest-extended";
 import "../mocks/core-container";
 import { defaults } from "../mocks/p2p-options";
 
-import { Blocks, Managers } from "@arkecosystem/crypto/src";
-import unitnetMilestones from "@arkecosystem/crypto/src/networks/unitnet/milestones.json";
+import { Blocks, Managers } from "@tycoon69-labs/crypto/src";
+import unitnetMilestones from "@tycoon69-labs/crypto/src/networks/unitnet/milestones.json";
 import delay from "delay";
 import net from "net";
 import SocketCluster from "socketcluster";

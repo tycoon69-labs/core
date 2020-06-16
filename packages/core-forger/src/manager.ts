@@ -3,7 +3,7 @@ import { ApplicationEvents } from "@arkecosystem/core-event-emitter";
 import { Logger, P2P } from "@arkecosystem/core-interfaces";
 import { NetworkStateStatus } from "@arkecosystem/core-p2p";
 import { Wallets } from "@arkecosystem/core-state";
-import { Blocks, Crypto, Interfaces, Managers, Transactions, Types } from "@arkecosystem/crypto";
+import { Blocks, Crypto, Interfaces, Managers, Transactions, Types } from "@tycoon69-labs/crypto";
 import isEmpty from "lodash.isempty";
 import uniq from "lodash.uniq";
 import pluralize from "pluralize";

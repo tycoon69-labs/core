@@ -4,7 +4,7 @@ import {
     Builders as MagistrateBuilders,
     Transactions as MagistrateTransactions,
 } from "@arkecosystem/core-magistrate-crypto";
-import { Managers, Transactions } from "@arkecosystem/crypto";
+import { Managers, Transactions } from "@tycoon69-labs/crypto";
 
 const genesisHash = "8527a891e224136950ff32ca212b45bc93f69fbb801c3b1ebedac52775f99e61";
 let builder: MagistrateBuilders.BridgechainUpdateBuilder;

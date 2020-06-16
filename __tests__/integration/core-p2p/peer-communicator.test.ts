@@ -3,7 +3,7 @@ import "jest-extended";
 import { eventEmitter } from "./mocks/core-container";
 
 import { P2P } from "@arkecosystem/core-interfaces";
-import { Blocks, Transactions } from "@arkecosystem/crypto";
+import { Blocks, Transactions } from "@tycoon69-labs/crypto";
 import { getPeerConfig } from "../../../packages/core-p2p/src/socket-server/utils/get-peer-config";
 import { createPeerService, createStubPeer } from "../../helpers/peers";
 import { TransactionFactory } from "../../helpers/transaction-factory";

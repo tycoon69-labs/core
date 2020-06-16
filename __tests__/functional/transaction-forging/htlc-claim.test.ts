@@ -1,7 +1,7 @@
-import { Crypto, Enums, Identities } from "@arkecosystem/crypto";
+import { Crypto, Enums, Identities } from "@tycoon69-labs/crypto";
 import { TransactionFactory } from "../../helpers/transaction-factory";
 import { secrets } from "../../utils/config/testnet/delegates.json";
-import { htlcSecretHex, htlcSecretHashHex } from "../../utils/fixtures";
+import { htlcSecretHashHex, htlcSecretHex } from "../../utils/fixtures";
 import * as support from "./__support__";
 
 const { passphrase, secondPassphrase } = support.passphrases;

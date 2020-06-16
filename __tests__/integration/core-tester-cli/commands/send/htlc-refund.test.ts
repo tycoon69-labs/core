@@ -1,7 +1,7 @@
 import "jest-extended";
 
 import { httpie } from "@arkecosystem/core-utils";
-import { Enums, Managers } from "@arkecosystem/crypto";
+import { Enums, Managers } from "@tycoon69-labs/crypto";
 import nock from "nock";
 import { HtlcRefundCommand } from "../../../../../packages/core-tester-cli/src/commands/send/htlc-refund";
 import { arkToSatoshi, captureTransactions, toFlags } from "../../shared";

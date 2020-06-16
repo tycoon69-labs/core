@@ -4,10 +4,10 @@ import { state } from "../mocks/state";
 
 import { State } from "@arkecosystem/core-interfaces";
 import { Handlers } from "@arkecosystem/core-transactions";
-import { Crypto, Enums, Identities, Managers, Transactions, Utils } from "@arkecosystem/crypto";
+import { Crypto, Enums, Identities, Managers, Transactions, Utils } from "@tycoon69-labs/crypto";
 import { Wallet, WalletManager } from "../../../../packages/core-state/src/wallets";
 import { TransactionFactory } from "../../../helpers/transaction-factory";
-import { htlcSecretHex, htlcSecretHashHex } from "../../../utils/fixtures";
+import { htlcSecretHashHex, htlcSecretHex } from "../../../utils/fixtures";
 
 jest.mock("@arkecosystem/core-container", () => require("../mocks/container").container);
 

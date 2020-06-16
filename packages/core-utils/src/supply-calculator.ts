@@ -1,6 +1,6 @@
 import { app } from "@arkecosystem/core-container";
 import { Blockchain } from "@arkecosystem/core-interfaces";
-import { Utils } from "@arkecosystem/crypto";
+import { Utils } from "@tycoon69-labs/crypto";
 
 export const calculate = (height: number): string => {
     const { genesisBlock, milestones } = app.getConfig().all();

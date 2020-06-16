@@ -3,7 +3,7 @@
 import { app } from "@arkecosystem/core-container";
 import { ApplicationEvents } from "@arkecosystem/core-event-emitter";
 import { EventEmitter, Logger, P2P } from "@arkecosystem/core-interfaces";
-import { Utils } from "@arkecosystem/crypto";
+import { Utils } from "@tycoon69-labs/crypto";
 import { Peer } from "./peer";
 import { isValidVersion, isWhitelisted } from "./utils";
 

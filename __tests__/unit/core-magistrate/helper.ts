@@ -1,6 +1,6 @@
 import "jest-extended";
 
-import { Interfaces } from "@arkecosystem/crypto";
+import { Interfaces } from "@tycoon69-labs/crypto";
 import {
     IBridgechainRegistrationAsset,
     IBridgechainUpdateAsset,

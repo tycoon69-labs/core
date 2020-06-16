@@ -23,7 +23,7 @@
         "@arkecosystem/core-event-emitter": "^2.6.38",
         "@arkecosystem/core-interfaces": "^2.6.38",
         "@arkecosystem/core-utils": "^2.6.38",
-        "@arkecosystem/crypto": "^2.6.38",
+        "@tycoon69-labs/crypto": "^2.6.38",
         "bs58check": "^2.1.2"
     },
     "engines": {

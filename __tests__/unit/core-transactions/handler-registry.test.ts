@@ -1,7 +1,7 @@
 import "jest-extended";
 
 import { Database, State, TransactionPool } from "@arkecosystem/core-interfaces";
-import { Crypto, Enums, Errors, Identities, Interfaces, Managers, Transactions, Utils } from "@arkecosystem/crypto";
+import { Crypto, Enums, Errors, Identities, Interfaces, Managers, Transactions, Utils } from "@tycoon69-labs/crypto";
 import ByteBuffer from "bytebuffer";
 import { Registry, TransactionHandler } from "../../../packages/core-transactions/src/handlers";
 import { TransactionHandlerConstructor } from "../../../packages/core-transactions/src/handlers/transaction";

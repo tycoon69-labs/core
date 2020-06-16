@@ -1,5 +1,5 @@
 import { Tree } from "@arkecosystem/core-utils/src/tree";
-import { Utils } from "@arkecosystem/crypto";
+import { Utils } from "@tycoon69-labs/crypto";
 
 describe("Tree", () => {
     // using Bignumbers for the tests

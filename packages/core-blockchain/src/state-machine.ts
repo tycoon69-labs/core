@@ -4,7 +4,7 @@ import { app } from "@arkecosystem/core-container";
 import { ApplicationEvents } from "@arkecosystem/core-event-emitter";
 import { EventEmitter, Logger, State } from "@arkecosystem/core-interfaces";
 import { isBlockChained, roundCalculator } from "@arkecosystem/core-utils";
-import { Interfaces, Utils } from "@arkecosystem/crypto";
+import { Interfaces, Utils } from "@tycoon69-labs/crypto";
 
 import pluralize from "pluralize";
 import { blockchainMachine } from "./machines/blockchain";

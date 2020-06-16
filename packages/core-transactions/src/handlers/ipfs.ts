@@ -1,5 +1,5 @@
 import { Database, State, TransactionPool } from "@arkecosystem/core-interfaces";
-import { Interfaces, Managers, Transactions, Utils } from "@arkecosystem/crypto";
+import { Interfaces, Managers, Transactions, Utils } from "@tycoon69-labs/crypto";
 import { IpfsHashAlreadyExists } from "../errors";
 import { TransactionReader } from "../transaction-reader";
 import { TransactionHandler, TransactionHandlerConstructor } from "./transaction";

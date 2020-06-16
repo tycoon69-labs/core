@@ -27,7 +27,7 @@
         "@arkecosystem/core-transaction-pool": "^2.6.38",
         "@arkecosystem/core-transactions": "^2.6.38",
         "@arkecosystem/core-utils": "^2.6.38",
-        "@arkecosystem/crypto": "^2.6.38",
+        "@tycoon69-labs/crypto": "^2.6.38",
         "@arkecosystem/utils": "^1.1",
         "@hapi/boom": "^8.0.0",
         "@hapi/joi": "^15.1.0",

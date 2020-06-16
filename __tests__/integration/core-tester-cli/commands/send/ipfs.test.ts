@@ -1,7 +1,7 @@
 import "jest-extended";
 
 import { httpie } from "@arkecosystem/core-utils";
-import { Identities, Managers } from "@arkecosystem/crypto";
+import { Identities, Managers } from "@tycoon69-labs/crypto";
 import nock from "nock";
 import { IpfsCommand } from "../../../../../packages/core-tester-cli/src/commands/send/ipfs";
 import { arkToSatoshi, captureTransactions, toFlags } from "../../shared";

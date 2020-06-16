@@ -1,6 +1,6 @@
 import { app } from "@arkecosystem/core-container";
 import { Database, State, TransactionPool } from "@arkecosystem/core-interfaces";
-import { Enums, Interfaces, Managers, Transactions, Utils } from "@arkecosystem/crypto";
+import { Enums, Interfaces, Managers, Transactions, Utils } from "@tycoon69-labs/crypto";
 import { HtlcLockExpiredError } from "../errors";
 import { TransactionHandler, TransactionHandlerConstructor } from "./transaction";
 

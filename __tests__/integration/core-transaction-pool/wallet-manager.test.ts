@@ -1,7 +1,7 @@
 import { Blockchain, Container, Database, State } from "@arkecosystem/core-interfaces";
 import { Wallets } from "@arkecosystem/core-state";
 import { Handlers } from "@arkecosystem/core-transactions";
-import { Blocks, Identities, Utils } from "@arkecosystem/crypto";
+import { Blocks, Identities, Utils } from "@tycoon69-labs/crypto";
 import { generateMnemonic } from "bip39";
 import { Blockchain as BlockchainClass } from "../../../packages/core-blockchain/src";
 import { BlockProcessor } from "../../../packages/core-blockchain/src/processor";

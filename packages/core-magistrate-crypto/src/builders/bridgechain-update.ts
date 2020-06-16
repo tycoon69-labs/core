@@ -1,4 +1,4 @@
-import { Interfaces, Transactions, Utils } from "@arkecosystem/crypto";
+import { Interfaces, Transactions, Utils } from "@tycoon69-labs/crypto";
 import { MagistrateTransactionGroup, MagistrateTransactionType } from "../enums";
 import { IBridgechainUpdateAsset } from "../interfaces";
 import { BridgechainUpdateTransaction } from "../transactions";

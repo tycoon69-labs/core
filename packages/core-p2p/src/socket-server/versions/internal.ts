@@ -1,7 +1,7 @@
 import { app } from "@arkecosystem/core-container";
 import { Blockchain, Database, EventEmitter, Logger, P2P, TransactionPool } from "@arkecosystem/core-interfaces";
 import { isWhitelisted, roundCalculator } from "@arkecosystem/core-utils";
-import { Crypto } from "@arkecosystem/crypto";
+import { Crypto } from "@tycoon69-labs/crypto";
 import { process } from "ipaddr.js";
 
 export const acceptNewPeer = async ({ service, req }: { service: P2P.IPeerService; req }): Promise<void> => {

@@ -1,5 +1,5 @@
 import { SortedArray } from "@arkecosystem/core-utils/src/sorted-array";
-import { Utils } from "@arkecosystem/crypto";
+import { Utils } from "@tycoon69-labs/crypto";
 
 describe("SortedArray", () => {
     // using Bignumbers for the tests

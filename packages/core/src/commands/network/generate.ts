@@ -1,5 +1,5 @@
-import { Crypto, Identities, Transactions, Utils } from "@arkecosystem/crypto";
 import { flags } from "@oclif/command";
+import { Crypto, Identities, Transactions, Utils } from "@tycoon69-labs/crypto";
 import { generateMnemonic } from "bip39";
 import ByteBuffer from "bytebuffer";
 import fs from "fs-extra";

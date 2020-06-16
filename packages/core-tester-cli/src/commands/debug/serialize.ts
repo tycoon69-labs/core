@@ -1,5 +1,5 @@
-import { Blocks, Interfaces, Managers, Transactions, Types } from "@arkecosystem/crypto";
 import { flags } from "@oclif/command";
+import { Blocks, Interfaces, Managers, Transactions, Types } from "@tycoon69-labs/crypto";
 import { handleOutput } from "../../utils";
 import { BaseCommand } from "../command";
 
@@ -31,7 +31,7 @@ export class SerializeCommand extends BaseCommand {
         if (flags.type === "transaction") {
             serialized = Transactions.TransactionFactory.fromData(JSON.parse(flags.data)).serialized;
         } else {
-            // @TODO: call applySchema in @arkecosystem/crypto before serialising
+            // @TODO: call applySchema in @tycoon69-labs/crypto before serialising
             const block: Interfaces.IBlockData = Blocks.Block.applySchema(JSON.parse(flags.data));
 
             serialized = Blocks.Block[flags.full ? "serializeWithTransactions" : "serialize"](block);

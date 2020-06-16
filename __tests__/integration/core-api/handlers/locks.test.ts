@@ -2,7 +2,7 @@ import "../../../utils";
 
 import { app } from "@arkecosystem/core-container";
 import { Database, State } from "@arkecosystem/core-interfaces";
-import { Crypto, Identities, Interfaces, Utils } from "@arkecosystem/crypto";
+import { Crypto, Identities, Interfaces, Utils } from "@tycoon69-labs/crypto";
 import { TransactionFactory } from "../../../helpers";
 import { genesisBlock } from "../../../utils/fixtures/testnet/block-model";
 import { setUp, tearDown } from "../__support__/setup";

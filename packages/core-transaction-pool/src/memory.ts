@@ -1,7 +1,7 @@
 import { app } from "@arkecosystem/core-container";
 import { State } from "@arkecosystem/core-interfaces";
 import { expirationCalculator, SortedArray } from "@arkecosystem/core-utils";
-import { Crypto, Interfaces, Managers, Transactions, Utils } from "@arkecosystem/crypto";
+import { Crypto, Interfaces, Managers, Transactions, Utils } from "@tycoon69-labs/crypto";
 import assert from "assert";
 
 export class Memory {

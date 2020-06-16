@@ -1,6 +1,6 @@
 import { app } from "@arkecosystem/core-container";
 import { State } from "@arkecosystem/core-interfaces";
-import { Enums, Interfaces } from "@arkecosystem/crypto";
+import { Enums, Interfaces } from "@tycoon69-labs/crypto";
 
 export const calculateLockExpirationStatus = (expiration: Interfaces.IHtlcExpiration): boolean => {
     const lastBlock: Interfaces.IBlock = app

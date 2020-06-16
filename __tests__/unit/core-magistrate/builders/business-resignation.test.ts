@@ -4,7 +4,7 @@ import {
     Builders as MagistrateBuilders,
     Transactions as MagistrateTransactions,
 } from "@arkecosystem/core-magistrate-crypto";
-import { Managers, Transactions } from "@arkecosystem/crypto";
+import { Managers, Transactions } from "@tycoon69-labs/crypto";
 
 let builder: MagistrateBuilders.BusinessResignationBuilder;
 

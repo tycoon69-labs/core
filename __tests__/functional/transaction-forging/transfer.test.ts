@@ -1,4 +1,4 @@
-import { Identities, Managers } from "@arkecosystem/crypto";
+import { Identities, Managers } from "@tycoon69-labs/crypto";
 import { TransactionFactory } from "../../helpers/transaction-factory";
 import { secrets } from "../../utils/config/testnet/delegates.json";
 import * as support from "./__support__";

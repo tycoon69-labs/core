@@ -1,6 +1,6 @@
 import { app } from "@arkecosystem/core-container";
 import { Database } from "@arkecosystem/core-interfaces";
-import { Enums, Interfaces } from "@arkecosystem/crypto";
+import { Enums, Interfaces } from "@tycoon69-labs/crypto";
 import { SearchParameterConverter } from "./utils/search-parameter-converter";
 
 export class TransactionsBusinessRepository implements Database.ITransactionsBusinessRepository {

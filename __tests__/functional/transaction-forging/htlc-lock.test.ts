@@ -1,4 +1,4 @@
-import { Crypto, Enums, Identities, Utils } from "@arkecosystem/crypto";
+import { Crypto, Enums, Identities, Utils } from "@tycoon69-labs/crypto";
 import got from "got";
 import { TransactionFactory } from "../../helpers/transaction-factory";
 import { secrets } from "../../utils/config/testnet/delegates.json";

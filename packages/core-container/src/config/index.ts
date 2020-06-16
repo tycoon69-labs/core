@@ -1,5 +1,5 @@
-import { Interfaces, Managers, Types } from "@arkecosystem/crypto";
 import Joi from "@hapi/joi";
+import { Interfaces, Managers, Types } from "@tycoon69-labs/crypto";
 import get from "lodash.get";
 import set from "lodash.set";
 import { FileLoader } from "./file-loader";

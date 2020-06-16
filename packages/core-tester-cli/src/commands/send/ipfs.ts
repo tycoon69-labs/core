@@ -1,4 +1,4 @@
-import { Identities } from "@arkecosystem/crypto";
+import { Identities } from "@tycoon69-labs/crypto";
 import { satoshiFlag } from "../../flags";
 import { SendCommand } from "../../shared/send";
 import { TransferCommand } from "./transfer";

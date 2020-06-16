@@ -1,7 +1,7 @@
 import { app } from "@arkecosystem/core-container";
 import { EventEmitter, Logger, P2P } from "@arkecosystem/core-interfaces";
 import { httpie } from "@arkecosystem/core-utils";
-import { Blocks, Interfaces, Managers, Transactions, Validation } from "@arkecosystem/crypto";
+import { Blocks, Interfaces, Managers, Transactions, Validation } from "@tycoon69-labs/crypto";
 import dayjs from "dayjs";
 import delay from "delay";
 import { SCClientSocket } from "socketcluster-client";

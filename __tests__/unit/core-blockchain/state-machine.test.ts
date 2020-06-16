@@ -8,7 +8,7 @@ import { logger } from "./mocks/logger";
 import { getMonitor } from "./mocks/p2p/network-monitor";
 import { stateStorageStub as stateStorage } from "./stubs/state-storage";
 
-import { Crypto } from "@arkecosystem/crypto";
+import { Crypto } from "@tycoon69-labs/crypto";
 import { defaults } from "../../../packages/core-blockchain/src/defaults";
 import { genesisBlock } from "../../utils/config/testnet/genesisBlock";
 

@@ -1,6 +1,6 @@
 import { State } from "@arkecosystem/core-interfaces";
 import { Errors, Handlers } from "@arkecosystem/core-transactions";
-import { Enums, Identities, Interfaces, Transactions, Utils } from "@arkecosystem/crypto";
+import { Enums, Identities, Interfaces, Transactions, Utils } from "@tycoon69-labs/crypto";
 import assert from "assert";
 import dottie from "dottie";
 

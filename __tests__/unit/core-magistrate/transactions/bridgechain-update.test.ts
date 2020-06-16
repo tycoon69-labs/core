@@ -1,7 +1,7 @@
 import "jest-extended";
 
 import { Builders as MagistrateBuilders } from "@arkecosystem/core-magistrate-crypto";
-import { Managers, Transactions, Validation } from "@arkecosystem/crypto";
+import { Managers, Transactions, Validation } from "@tycoon69-labs/crypto";
 import { BridgechainUpdateTransaction } from "../../../../packages/core-magistrate-crypto/src/transactions";
 import { bridgechainUpdateAsset1, checkCommonFields } from "../helper";
 

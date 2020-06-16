@@ -1,4 +1,4 @@
-import { Managers } from "@arkecosystem/crypto";
+import { Managers } from "@tycoon69-labs/crypto";
 import { EventEmitter } from "../../../../packages/core-event-emitter/src/emitter";
 import { defaults } from "../../../../packages/core-p2p/src/defaults";
 import * as plugins from "../../../utils/config/testnet/plugins.js";

@@ -5,7 +5,7 @@ import { ApplicationEvents } from "@arkecosystem/core-event-emitter";
 import { Database, EventEmitter, Logger, State, TransactionPool } from "@arkecosystem/core-interfaces";
 import { Wallets } from "@arkecosystem/core-state";
 import { Handlers } from "@arkecosystem/core-transactions";
-import { Enums, Interfaces, Transactions } from "@arkecosystem/crypto";
+import { Enums, Interfaces, Transactions } from "@tycoon69-labs/crypto";
 import differencewith from "lodash.differencewith";
 import { ITransactionsProcessed } from "./interfaces";
 import { Memory } from "./memory";

@@ -1,6 +1,6 @@
 import { app } from "@arkecosystem/core-container";
 import { State } from "@arkecosystem/core-interfaces";
-import { Managers } from "@arkecosystem/crypto";
+import { Managers } from "@tycoon69-labs/crypto";
 
 export const getMaxTransactionBytes = (): number => {
     const height = app

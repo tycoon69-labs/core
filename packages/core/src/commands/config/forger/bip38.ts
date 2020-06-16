@@ -1,5 +1,5 @@
-import { Crypto, Identities, Managers } from "@arkecosystem/crypto";
 import { flags } from "@oclif/command";
+import { Crypto, Identities, Managers } from "@tycoon69-labs/crypto";
 import { validateMnemonic } from "bip39";
 import fs from "fs-extra";
 import prompts from "prompts";

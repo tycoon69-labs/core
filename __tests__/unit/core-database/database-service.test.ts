@@ -5,7 +5,7 @@ import { app } from "@arkecosystem/core-container";
 import { ApplicationEvents } from "@arkecosystem/core-event-emitter";
 import { Database, EventEmitter, State } from "@arkecosystem/core-interfaces";
 import { Handlers } from "@arkecosystem/core-transactions";
-import { Blocks, Constants, Enums, Identities, Managers, Transactions, Utils } from "@arkecosystem/crypto";
+import { Blocks, Constants, Enums, Identities, Managers, Transactions, Utils } from "@tycoon69-labs/crypto";
 import { DatabaseService } from "../../../packages/core-database/src/database-service";
 import { Wallet, WalletManager } from "../../../packages/core-state/src/wallets";
 import { roundCalculator } from "../../../packages/core-utils";

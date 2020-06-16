@@ -4,7 +4,7 @@ import { Delegate } from "@arkecosystem/core-forger";
 import { Container, Database, State, TransactionPool } from "@arkecosystem/core-interfaces";
 import { Wallets } from "@arkecosystem/core-state";
 import { roundCalculator } from "@arkecosystem/core-utils";
-import { Blocks, Crypto, Identities, Interfaces, Managers, Utils } from "@arkecosystem/crypto";
+import { Blocks, Crypto, Identities, Interfaces, Managers, Utils } from "@tycoon69-labs/crypto";
 import delay from "delay";
 import cloneDeep from "lodash.clonedeep";
 import socketCluster from "socketcluster-client";

@@ -1,7 +1,7 @@
 import { app } from "@arkecosystem/core-container";
 import { ApplicationEvents } from "@arkecosystem/core-event-emitter";
 import { Database, EventEmitter, State, TransactionPool } from "@arkecosystem/core-interfaces";
-import { Interfaces, Managers, Transactions } from "@arkecosystem/crypto";
+import { Interfaces, Managers, Transactions } from "@tycoon69-labs/crypto";
 import { NotEnoughDelegatesError, WalletAlreadyResignedError, WalletNotADelegateError } from "../errors";
 import { TransactionReader } from "../transaction-reader";
 import { DelegateRegistrationTransactionHandler } from "./delegate-registration";

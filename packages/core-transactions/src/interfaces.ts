@@ -1,5 +1,5 @@
 import { Database, EventEmitter, State, TransactionPool } from "@arkecosystem/core-interfaces";
-import { Interfaces, Transactions, Utils } from "@arkecosystem/crypto";
+import { Interfaces, Transactions, Utils } from "@tycoon69-labs/crypto";
 import { TransactionHandlerConstructor } from "./handlers/transaction";
 
 export interface ITransactionHandler {

@@ -23,7 +23,7 @@
         "pretest": "bash ../../scripts/pre-test.sh"
     },
     "dependencies": {
-        "@arkecosystem/crypto": "^2.6.38",
+        "@tycoon69-labs/crypto": "^2.6.38",
         "awilix": "^4.2.2",
         "dayjs": "^1.8.15"
     },

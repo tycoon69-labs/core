@@ -22,7 +22,7 @@
         "@arkecosystem/core-event-emitter": "^2.6.38",
         "@arkecosystem/core-http-utils": "^2.6.38",
         "@arkecosystem/core-interfaces": "^2.6.38",
-        "@arkecosystem/crypto": "^2.6.38",
+        "@tycoon69-labs/crypto": "^2.6.38",
         "@elastic/elasticsearch": "^7.2.0",
         "@hapi/boom": "^8.0.0",
         "@hapi/joi": "^15.1.0",

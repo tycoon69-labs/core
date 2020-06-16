@@ -5,7 +5,7 @@ import {
     Transactions as MagistrateTransactions,
 } from "@arkecosystem/core-magistrate-crypto";
 import { Handlers, TransactionReader } from "@arkecosystem/core-transactions";
-import { Interfaces, Transactions } from "@arkecosystem/crypto";
+import { Interfaces, Transactions } from "@tycoon69-labs/crypto";
 import {
     BridgechainIsNotRegisteredByWalletError,
     BridgechainIsResignedError,

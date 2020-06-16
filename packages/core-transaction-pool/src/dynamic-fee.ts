@@ -1,7 +1,7 @@
 import { app } from "@arkecosystem/core-container";
 import { Logger, State } from "@arkecosystem/core-interfaces";
 import { Handlers } from "@arkecosystem/core-transactions";
-import { Interfaces, Utils } from "@arkecosystem/crypto";
+import { Interfaces, Utils } from "@tycoon69-labs/crypto";
 import { IDynamicFeeMatch } from "./interfaces";
 
 // @TODO: better name

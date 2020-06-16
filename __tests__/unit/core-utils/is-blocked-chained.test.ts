@@ -1,6 +1,6 @@
 import "jest-extended";
 
-import { Crypto, Interfaces } from "@arkecosystem/crypto";
+import { Crypto, Interfaces } from "@tycoon69-labs/crypto";
 import { isBlockChained } from "../../../packages/core-utils/src";
 
 describe("isChained", () => {

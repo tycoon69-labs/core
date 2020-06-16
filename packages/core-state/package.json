@@ -26,7 +26,7 @@
         "@arkecosystem/core-interfaces": "^2.6.38",
         "@arkecosystem/core-transactions": "^2.6.38",
         "@arkecosystem/core-utils": "^2.6.38",
-        "@arkecosystem/crypto": "^2.6.38",
+        "@tycoon69-labs/crypto": "^2.6.38",
         "dottie": "^2.0.1",
         "immutable": "^4.0.0-rc.12",
         "lodash.clonedeep": "^4.5.0",

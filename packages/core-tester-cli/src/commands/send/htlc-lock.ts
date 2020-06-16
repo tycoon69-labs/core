@@ -1,5 +1,5 @@
-import { Identities } from "@arkecosystem/crypto";
 import { flags } from "@oclif/command";
+import { Identities } from "@tycoon69-labs/crypto";
 import { satoshiFlag } from "../../flags";
 import { htlcSecretHashHex } from "../../shared/htlc-secret";
 import { SendCommand } from "../../shared/send";

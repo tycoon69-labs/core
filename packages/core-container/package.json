@@ -21,7 +21,7 @@
     "dependencies": {
         "@arkecosystem/core-event-emitter": "^2.6.38",
         "@arkecosystem/core-interfaces": "^2.6.38",
-        "@arkecosystem/crypto": "^2.6.38",
+        "@tycoon69-labs/crypto": "^2.6.38",
         "@hapi/hoek": "^8.0.2",
         "@hapi/joi": "^15.1.0",
         "awilix": "^4.2.2",

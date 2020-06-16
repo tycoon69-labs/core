@@ -10,7 +10,7 @@ import {
     State,
     TransactionPool,
 } from "@arkecosystem/core-interfaces";
-import { Blocks, Crypto, Interfaces, Managers, Utils } from "@arkecosystem/crypto";
+import { Blocks, Crypto, Interfaces, Managers, Utils } from "@tycoon69-labs/crypto";
 
 import { isBlockChained, roundCalculator } from "@arkecosystem/core-utils";
 import async from "async";

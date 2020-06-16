@@ -21,7 +21,7 @@
         "prepublishOnly": "yarn build"
     },
     "dependencies": {
-        "@arkecosystem/crypto": "^2.6.38",
+        "@tycoon69-labs/crypto": "^2.6.38",
         "bytebuffer": "^5.0.1"
     },
     "publishConfig": {

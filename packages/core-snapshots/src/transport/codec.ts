@@ -1,4 +1,4 @@
-import { Blocks, Transactions, Utils } from "@arkecosystem/crypto";
+import { Blocks, Transactions, Utils } from "@tycoon69-labs/crypto";
 import { createCodec, decode, encode } from "msgpack-lite";
 import { camelizeKeys, decamelizeKeys } from "xcase";
 

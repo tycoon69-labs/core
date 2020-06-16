@@ -1,6 +1,6 @@
 import "./mocks/core-container";
 
-import { Managers, Transactions, Utils } from "@arkecosystem/crypto";
+import { Managers, Transactions, Utils } from "@tycoon69-labs/crypto";
 import { Memory } from "../../../packages/core-transaction-pool/src/memory";
 
 Managers.configManager.setFromPreset("testnet");

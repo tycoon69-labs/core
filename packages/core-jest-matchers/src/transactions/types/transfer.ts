@@ -1,4 +1,4 @@
-import { Enums } from "@arkecosystem/crypto";
+import { Enums } from "@tycoon69-labs/crypto";
 
 const { Transfer } = Enums.TransactionType;
 

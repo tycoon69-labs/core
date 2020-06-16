@@ -1,6 +1,6 @@
 import { Database, State } from "@arkecosystem/core-interfaces";
 import { delegateCalculator, expirationCalculator, hasSomeProperty } from "@arkecosystem/core-utils";
-import { Interfaces, Utils } from "@arkecosystem/crypto";
+import { Interfaces, Utils } from "@tycoon69-labs/crypto";
 import { searchEntries } from "./utils/search-entries";
 
 interface ISearchContext<T = any> {

@@ -6,7 +6,7 @@ import { blockchain } from "./mocks/blockchain";
 
 import { Delegate } from "@arkecosystem/core-forger";
 import { P2P } from "@arkecosystem/core-interfaces";
-import { Networks, Utils } from "@arkecosystem/crypto";
+import { Networks, Utils } from "@tycoon69-labs/crypto";
 import { NetworkState } from "../../../packages/core-p2p/src/network-state";
 import { createPeerService, createStubPeer, stubPeer } from "../../helpers/peers";
 import { TransactionFactory } from "../../helpers/transaction-factory";

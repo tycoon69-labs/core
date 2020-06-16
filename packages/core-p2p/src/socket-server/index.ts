@@ -1,6 +1,6 @@
 import { app } from "@arkecosystem/core-container";
 import { Logger, P2P } from "@arkecosystem/core-interfaces";
-import { Managers } from "@arkecosystem/crypto";
+import { Managers } from "@tycoon69-labs/crypto";
 import SocketCluster from "socketcluster";
 import { requestSchemas } from "../schemas";
 import { ServerError } from "./errors";

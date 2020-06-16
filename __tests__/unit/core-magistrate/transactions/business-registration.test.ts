@@ -2,7 +2,7 @@ import "jest-extended";
 
 import { Builders as MagistrateBuilders } from "@arkecosystem/core-magistrate-crypto";
 import { Transactions as MagistrateTransactions } from "@arkecosystem/core-magistrate-crypto";
-import { Managers, Transactions, Validation as Ajv } from "@arkecosystem/crypto";
+import { Managers, Transactions, Validation as Ajv } from "@tycoon69-labs/crypto";
 import {
     businessRegistrationAsset1,
     businessRegistrationAsset2,

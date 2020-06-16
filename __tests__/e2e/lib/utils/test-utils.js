@@ -1,6 +1,6 @@
 "use strict";
 
-const { Managers, Identities } = require("@arkecosystem/crypto");
+const { Managers, Identities } = require("@tycoon69-labs/crypto");
 const { generateMnemonic } = require("bip39");
 const axios = require("axios");
 axios.defaults.adapter = require("axios/lib/adapters/http");

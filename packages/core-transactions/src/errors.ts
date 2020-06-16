@@ -1,6 +1,6 @@
 import { State } from "@arkecosystem/core-interfaces";
-import { Utils } from "@arkecosystem/crypto";
-import { InternalTransactionType } from "@arkecosystem/crypto/dist/transactions";
+import { Utils } from "@tycoon69-labs/crypto";
+import { InternalTransactionType } from "@tycoon69-labs/crypto/dist/transactions";
 
 // tslint:disable:max-classes-per-file
 

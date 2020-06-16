@@ -1,8 +1,8 @@
 import "jest-extended";
 
 import { State } from "@arkecosystem/core-interfaces";
-import { Constants, Enums, Interfaces, Managers, Utils } from "@arkecosystem/crypto";
-import { configManager } from "@arkecosystem/crypto/src/managers";
+import { Constants, Enums, Interfaces, Managers, Utils } from "@tycoon69-labs/crypto";
+import { configManager } from "@tycoon69-labs/crypto/src/managers";
 import clonedeep from "lodash.clonedeep";
 import { Wallet } from "../../../../packages/core-state/src/wallets";
 import { TransactionFactory } from "../../../helpers/transaction-factory";

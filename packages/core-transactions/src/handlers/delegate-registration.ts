@@ -1,6 +1,6 @@
 import { ApplicationEvents } from "@arkecosystem/core-event-emitter";
 import { Database, EventEmitter, State, TransactionPool } from "@arkecosystem/core-interfaces";
-import { Enums, Interfaces, Transactions, Utils } from "@arkecosystem/crypto";
+import { Enums, Interfaces, Transactions, Utils } from "@tycoon69-labs/crypto";
 import {
     NotSupportedForMultiSignatureWalletError,
     WalletIsAlreadyDelegateError,

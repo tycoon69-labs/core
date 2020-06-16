@@ -1,7 +1,7 @@
 import { app } from "@arkecosystem/core-container";
 import { Database, State, TransactionPool } from "@arkecosystem/core-interfaces";
 import { expirationCalculator } from "@arkecosystem/core-utils";
-import { Crypto, Enums, Interfaces, Managers, Transactions, Utils } from "@arkecosystem/crypto";
+import { Crypto, Enums, Interfaces, Managers, Transactions, Utils } from "@tycoon69-labs/crypto";
 import assert = require("assert");
 import { HtlcLockExpiredError, HtlcLockTransactionNotFoundError, HtlcSecretHashMismatchError } from "../errors";
 import { IDynamicFeeContext } from "../interfaces";
