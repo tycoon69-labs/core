@@ -1,5 +1,5 @@
-import { Identities } from "@tycoon69-labs/crypto";
 import { flags } from "@oclif/command";
+import { Identities } from "@tycoon69-labs/crypto";
 import { satoshiFlag } from "../../flags";
 import { logger } from "../../logger";
 import { SendCommand } from "../../shared/send";

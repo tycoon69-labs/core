@@ -1,6 +1,6 @@
 import { Database } from "@arkecosystem/core-interfaces";
-import { Utils } from "@tycoon69-labs/crypto";
 import { orderBy } from "@arkecosystem/utils";
+import { Utils } from "@tycoon69-labs/crypto";
 import dottie from "dottie";
 import { getProperty } from "./get-property";
 

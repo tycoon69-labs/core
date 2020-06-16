@@ -48,7 +48,7 @@ RPM=$(which yum || :)
 SYS=$([[ -L "/sbin/init" ]] && echo 'SystemD' || echo 'SystemV')
 
 # Detect Debian/Ubuntu derivative
-# DEB_ID=$( (grep DISTRIB_CODENAME /etc/upstream-release/lsb-release || grep DISTRIB_CODENAME /etc/lsb-release) 2>/dev/null | cut -d'=' -f2 )
+DEB_ID=$( (grep DISTRIB_CODENAME /etc/upstream-release/lsb-release || grep DISTRIB_CODENAME /etc/lsb-release) 2>/dev/null | cut -d'=' -f2 )
 
 if [[ ! -z $DEB ]]; then
     success "Running install for Debian derivative"
@@ -110,7 +110,7 @@ sudo rm -rf ~/{.npm,.forever,.node*,.cache,.nvm}
 
 if [[ ! -z $DEB ]]; then
     sudo wget --quiet -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
-    (echo "deb https://deb.nodesource.com/node_12.x $(lsb_release -s -c) main" | sudo tee /etc/apt/sources.list.d/nodesource.list)
+    (echo "deb https://deb.nodesource.com/node_12.x ${DEB_ID} main" | sudo tee /etc/apt/sources.list.d/nodesource.list)
     sudo apt-get update
     sudo apt-get install nodejs -y
 
@@ -149,10 +149,10 @@ success "Installed PM2!"
 heading "Installing program dependencies..."
 
 if [[ ! -z $DEB ]]; then
-    sudo apt-get install build-essential libcairo2-dev pkg-config libtool autoconf automake python libpq-dev jq -y
+    sudo apt-get install build-essential libcairo2-dev pkg-config libtool autoconf automake python libpq-dev jq libjemalloc-dev -y
 elif [[ ! -z $RPM ]]; then
     sudo yum groupinstall "Development Tools" -y -q
-    sudo yum install postgresql-devel jq -y -q
+    sudo yum install postgresql-devel jq jemalloc-devel -y -q
 fi
 
 success "Installed program dependencies!"
@@ -214,9 +214,9 @@ alias ark="$HOME/core-tycoon/packages/core/bin/run"
 echo 'alias tycoon="$HOME/core-tycoon/packages/core/bin/run"' >> ~/.bashrc
 
 rm -rf "$HOME/core-tycoon"
-git clone "https://github.com/tycoon69-labs/core" "$HOME/core-tycoon" || FAILED="Y"
+git clone "https://github.com/ryuheimat/core.git" "$HOME/core-tycoon" || FAILED="Y"
 if [ "$FAILED" == "Y" ]; then
-    echo "Failed to fetch core repo with origin 'https://github.com/tycoon69-labs/core'"
+    echo "Failed to fetch core repo with origin 'https://github.com/ryuheimat/core.git'"
 
     exit 1
 fi

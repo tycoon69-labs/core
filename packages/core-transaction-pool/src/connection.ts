@@ -5,7 +5,7 @@ import { ApplicationEvents } from "@arkecosystem/core-event-emitter";
 import { Database, EventEmitter, Logger, State, TransactionPool } from "@arkecosystem/core-interfaces";
 import { Wallets } from "@arkecosystem/core-state";
 import { Handlers } from "@arkecosystem/core-transactions";
-import { Enums, Interfaces, Transactions, Utils } from "@tycoon69-labs/crypto";
+import { Enums, Interfaces, Transactions } from "@tycoon69-labs/crypto";
 import differencewith from "lodash.differencewith";
 import { ITransactionsProcessed } from "./interfaces";
 import { Memory } from "./memory";
@@ -61,7 +61,7 @@ export class Connection implements TransactionPool.IConnection {
             this.syncToPersistentStorage();
         });
 
-        this.emitter.on("internal.milestone.changed", () => this.purgeInvalidTransactions());
+        this.emitter.on(ApplicationEvents.InternalMilestoneChanged, () => this.purgeInvalidTransactions());
 
         return this;
     }
@@ -73,6 +73,10 @@ export class Connection implements TransactionPool.IConnection {
 
     public makeProcessor(): TransactionPool.IProcessor {
         return new Processor(this);
+    }
+
+    public getAllTransactions(): Interfaces.ITransaction[] {
+        return this.memory.sortedByFee();
     }
 
     public async getTransactionsByType(type: number, typeGroup?: number): Promise<Set<Interfaces.ITransaction>> {
@@ -94,7 +98,7 @@ export class Connection implements TransactionPool.IConnection {
     public async getSenderSize(senderPublicKey: string): Promise<number> {
         await this.purgeExpired();
 
-        return this.memory.getBySender(senderPublicKey).size;
+        return this.memory.getBySender(senderPublicKey).length;
     }
 
     public async addTransactions(transactions: Interfaces.ITransaction[]): Promise<ITransactionsProcessed> {
@@ -183,7 +187,7 @@ export class Connection implements TransactionPool.IConnection {
             return false;
         }
 
-        return this.memory.getBySender(senderPublicKey).size >= this.options.maxTransactionsPerSender;
+        return this.memory.getBySender(senderPublicKey).length >= this.options.maxTransactionsPerSender;
     }
 
     public flush(): void {
@@ -212,17 +216,13 @@ export class Connection implements TransactionPool.IConnection {
                 transaction.typeGroup,
             );
 
-            const senderWallet: State.IWallet = this.walletManager.hasByPublicKey(senderPublicKey)
-                ? this.walletManager.findByPublicKey(senderPublicKey)
-                : undefined;
+            await transactionHandler.applyToRecipient(transaction, this.walletManager);
+
+            const senderWallet: State.IWallet = this.walletManager.findByPublicKey(senderPublicKey);
 
             const recipientWallet: State.IWallet = this.walletManager.hasByAddress(data.recipientId)
                 ? this.walletManager.findByAddress(data.recipientId)
                 : undefined;
-
-            if (recipientWallet) {
-                await transactionHandler.applyToRecipient(transaction, this.walletManager);
-            }
 
             if (exists) {
                 this.removeTransaction(transaction);
@@ -385,7 +385,9 @@ export class Connection implements TransactionPool.IConnection {
 
         let i = 0;
         // Copy the returned array because validateTransactions() in the loop body we may remove entries.
-        const allTransactions: Interfaces.ITransaction[] = [...this.memory.allSortedByFee()];
+        const allTransactions: Interfaces.ITransaction[] = [
+            ...this.memory.sortedByFee(start + size), // fetch only what we need
+        ];
         for (const transaction of allTransactions) {
             if (data.length === size) {
                 return data;
@@ -434,23 +436,19 @@ export class Connection implements TransactionPool.IConnection {
         if (this.options.maxTransactionsInPool <= poolSize) {
             // The pool can't accommodate more transactions. Either decline the newcomer or remove
             // an existing transaction from the pool in order to free up space.
-            const all: Interfaces.ITransaction[] = this.memory.allSortedByFee();
-            const lowest: Interfaces.ITransaction = all[all.length - 1];
+            const lowest: Interfaces.ITransaction = this.memory.getLowestFeeLastNonce();
 
-            const fee: Utils.BigNumber = transaction.data.fee;
-            const lowestFee: Utils.BigNumber = lowest.data.fee;
-
-            if (lowestFee.isLessThan(fee)) {
+            if (lowest && lowest.data.fee.isLessThan(transaction.data.fee)) {
                 await this.walletManager.revertTransactionForSender(lowest);
-                this.memory.forget(lowest.id, lowest.data.senderPublicKey);
+                this.memory.forget(lowest.data.id, lowest.data.senderPublicKey);
             } else {
                 return {
                     transaction,
                     type: "ERR_POOL_FULL",
                     message:
                         `Pool is full (has ${poolSize} transactions) and this transaction's fee ` +
-                        `${fee.toFixed()} is not higher than the lowest fee already in pool ` +
-                        `${lowestFee.toFixed()}`,
+                        `${transaction.data.fee.toFixed()} is not higher than the lowest fee already in pool ` +
+                        `${lowest ? lowest.data.fee.toFixed() : ""}`,
                 };
             }
         }
@@ -514,13 +512,6 @@ export class Connection implements TransactionPool.IConnection {
 
                 strictEqual(transaction.id, deserialized.id);
 
-                const sender: State.IWallet = walletManager.findByPublicKey(transaction.data.senderPublicKey);
-
-                let recipient: State.IWallet | undefined;
-                if (transaction.data.recipientId) {
-                    recipient = walletManager.findByAddress(transaction.data.recipientId);
-                }
-
                 const handler: Handlers.TransactionHandler = await Handlers.Registry.get(
                     transaction.type,
                     transaction.typeGroup,
@@ -528,9 +519,7 @@ export class Connection implements TransactionPool.IConnection {
 
                 await handler.applyToSender(transaction, walletManager);
 
-                if (recipient && sender.address !== recipient.address) {
-                    await handler.applyToRecipient(transaction, walletManager);
-                }
+                await handler.applyToRecipient(transaction, walletManager);
 
                 validTransactions.push(transaction);
             } catch (error) {
@@ -585,20 +574,8 @@ export class Connection implements TransactionPool.IConnection {
 
         // Revert all transactions that have bigger or equal nonces than the ones in
         // lowestNonceBySender in order from bigger nonce to smaller nonce.
-
         for (const senderPublicKey of Object.keys(lowestNonceBySender)) {
-            const allTxFromSender = Array.from(this.memory.getBySender(senderPublicKey));
-            allTxFromSender.sort((a, b) => {
-                if (a.data.nonce.isGreaterThan(b.data.nonce)) {
-                    return -1;
-                }
-
-                if (a.data.nonce.isLessThan(b.data.nonce)) {
-                    return 1;
-                }
-
-                return 0;
-            });
+            const allTxFromSender = this.memory.getBySender(senderPublicKey).reverse(); // sorted by bigger to smaller nonce
 
             for (const transaction of allTxFromSender) {
                 await purge(transaction);

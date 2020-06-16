@@ -19,7 +19,8 @@
         "multiSignature": 5000000000
       }
     },
-    "htlcEnabled": false
+    "htlcEnabled": false,
+    "vendorFieldLength": 255
   },
   {
     "height": 2,

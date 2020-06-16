@@ -30,7 +30,7 @@ import {
 } from "../../../packages/core-transactions/src/errors";
 import { Handlers, Interfaces as TransactionsInterfaces } from "../../../packages/core-transactions/src/index";
 import { TransactionFactory } from "../../helpers/transaction-factory";
-import { htlcSecretHex, htlcSecretHashHex } from "../../utils/fixtures";
+import { htlcSecretHashHex, htlcSecretHex } from "../../utils/fixtures";
 
 const { EpochTimestamp, BlockHeight } = Enums.HtlcLockExpirationType;
 

@@ -5,8 +5,8 @@ import { Delegate } from "../../../../packages/core-forger/src/delegate";
 import { WalletManager } from "../../../../packages/core-state/src/wallets";
 import { TransactionFactory } from "../../../helpers/transaction-factory";
 import { genesisBlock } from "../../../utils/config/unitnet/genesisBlock";
+import { htlcSecretHashHex, htlcSecretHex } from "../../../utils/fixtures";
 import { wallets } from "../../../utils/fixtures/unitnet";
-import { htlcSecretHex, htlcSecretHashHex } from "../../../utils/fixtures";
 import { setUp, tearDown } from "../__support__/setup";
 
 let container: Container.IContainer;

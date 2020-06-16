@@ -1,5 +1,5 @@
-import { Identities, Interfaces, Managers, Types } from "@tycoon69-labs/crypto";
 import { flags } from "@oclif/command";
+import { Identities, Interfaces, Managers, Types } from "@tycoon69-labs/crypto";
 import { handleOutput } from "../../utils";
 import { BaseCommand } from "../command";
 
