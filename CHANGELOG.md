@@ -1,4 +1,4 @@
-# Changelog
+3667# Changelog
 
 All notable changes to this project will be documented in this file.
 
@@ -6,6 +6,101 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [2.6.38] - 2020-05-27
+
+### Fixed
+
+-   Discard late-forged blocks from forger ([#3746])
+
+## [2.6.37] - 2020-05-12
+
+### Changed
+
+-   Custom validation for `postBlock` in `core-p2p` worker ([#3695])
+
+## [2.6.36] - 2020-05-04
+
+### Fixed
+
+-   Update vote balance with htlc locked balance on vote transactions ([#3669])
+-   Use sorted array (instead of tree) for storing transactions by fee and nonce ([#3678])
+
+## [2.6.34] - 2020-04-28
+
+### Fixed
+
+-   Create a unique round ID for elasticsearch ([#3659])
+
+### Changed
+
+-   Update @arkecosystem/utils dependency ([#3665])
+-   Use tree memory structure to sort by fee and by sender nonce **(core-transaction-pool)** ([#3667])
+
+## [2.6.31] - 2020-03-25
+
+### Fixed
+
+-   Allow transition to fork from idle ([#3614])
+
+## [2.6.30] - 2020-03-19
+
+### Changed
+
+-   Optimize database adding indexes ([#3605])
+-   Restrict some api sorting and filtering parameters that are not needed ([#3605])
+
+## [2.6.29] - 2020-03-13
+
+Re-release for NPM.
+
+## [2.6.28] - 2020-03-13
+
+### Changed
+
+-   Reset missedBlocks before await call ([#3598])
+
+## [2.6.27] - 2020-03-12
+
+### Fixed
+
+-   Always apply to sender wallet on `acceptChainedBlock` ([#3594])
+-   Block incomplete sockets ([#3596])
+
+## [2.6.25] - 2020-03-09
+
+### Fixed
+
+Fix block apply issue where in some cases transaction could be applied twice to recipient in transaction pool ([#3590])
+
+## [2.6.24] - 2020-03-04
+
+### Fixed
+
+-   add missing transactions.type_group index ([#3573])
+
+### Changed
+
+-   update xstate to v4.8.0 ([#3575])
+-   use application events from core-event-emitter ([#3574])
+
+## [2.6.21] - 2020-03-04
+
+### Fixed
+
+-   Set height 1 on config manager for processing genesis block (blockchain replay) ([#3561])
+-   Handle multiple installations of jemalloc ([#3562])
+-   jemalloc compatibility for ubuntu 16.04 ([#3567])
+-   Always call applyToRecipient ([#3570])
+
+### Changed
+
+-   Allow multiple ports in bridgechain schema ([#3504])
+-   Allow to resign business only when bridgechains are resigned ([#3524])
+-   Make bridgechain genesis hash only unique per wallet ([#3523])
+-   Add exceptions for business resignation ([#3551])
+-   No default addonBytes for magistrate transactions ([#3560])
+-   Use jemalloc as the memory allocator ([#3541])
 
 ## [2.6.11] - 2020-02-26
 
@@ -306,7 +401,7 @@ Rerelease of 2.5.37 due to some npm issues.
 
 ### Changed
 
--   Export dist/index.js for cjs and umd in `@tycoon69-labs/crypto` ([#2807])
+-   Export dist/index.js for cjs and umd in `@arkecosystem/crypto` ([#2807])
 -   Update dependencies to their latest versions ([#2808])
 -   Lookup wallets by keys for improved performance ([#2810])
 
@@ -411,7 +506,7 @@ Rerelease of 2.5.37 due to some npm issues.
 
 All changes listed in this section are things that either alter how certain data in core is treated and processed or changes to the public API of a package.
 
-As we move towards 2.6 and the completion of AIP11, AIP18 and AIP29 there will be various breaking changes. The main concern of most developers will be breaking changes to `@tycoon69-labs/crypto` so go through the commits listed below and make sure you adjust everything in your application that is affected by a change.
+As we move towards 2.6 and the completion of AIP11, AIP18 and AIP29 there will be various breaking changes. The main concern of most developers will be breaking changes to `@arkecosystem/crypto` so go through the commits listed below and make sure you adjust everything in your application that is affected by a change.
 
 ### Exchange JSON-RPC
 
@@ -461,9 +556,9 @@ If you've been using the JSON-RPC in the past together with ARK Core the migrati
 -   In-memory storage for last N blocks and transactions ([#2492])
 -   **BREAKING:** Switch transaction expiration from seconds to chain height ([#2461])
 -   Require the user to choose a snapshot if the blocks flag is missing in `@arkecosystem/core` commands ([#2522])
--   **BREAKING:** Implement Block.fromHex, Block.fromBytes and Block.fromData methods in `@tycoon69-labs/crypto` ([#2377])
--   **BREAKING:** Implement BlockFactory in `@tycoon69-labs/crypto` ([#2429])
--   **BREAKING:** Implement TransactionFactory in `@tycoon69-labs/crypto` ([#2437])
+-   **BREAKING:** Implement Block.fromHex, Block.fromBytes and Block.fromData methods in `@arkecosystem/crypto` ([#2377])
+-   **BREAKING:** Implement BlockFactory in `@arkecosystem/crypto` ([#2429])
+-   **BREAKING:** Implement TransactionFactory in `@arkecosystem/crypto` ([#2437])
 -   Integrate end-to-end tests ([#2468])
 -   Initial Implementation of `core-wallet-api` ([#2544])
 -   Accept block height to list block transactions in `core-api` ([#2567])
@@ -519,13 +614,13 @@ If you've been using the JSON-RPC in the past together with ARK Core the migrati
 -   Remove height difference ban for peers ([#2360])
 -   **BREAKING:** Simplify the transaction pool by not using insertion order ([#2495])
 -   **BREAKING:** Drop no longer needed pagination from `@arkecosystem/core-webhooks` ([#2424])
--   **BREAKING:** Extract transaction signing and utils out of the model in `@tycoon69-labs/crypto` ([#2514])
--   **BREAKING:** Extract transaction verification out of the model in `@tycoon69-labs/crypto` ([#2506])
--   **BREAKING:** Make all `Slots.*` methods static in `@tycoon69-labs/crypto` ([#2473])
--   **BREAKING:** Move interfaces, types and models in `@tycoon69-labs/crypto` ([#2379])
--   Move mainnet exceptions to config in `@tycoon69-labs/crypto` ([#2529])
--   **BREAKING:** Remove extraneous Client class in `@tycoon69-labs/crypto` ([#2417])
--   **BREAKING:** Split the `Crypto` class into `Hash` and `Transaction` in `@tycoon69-labs/crypto` ([#2444])
+-   **BREAKING:** Extract transaction signing and utils out of the model in `@arkecosystem/crypto` ([#2514])
+-   **BREAKING:** Extract transaction verification out of the model in `@arkecosystem/crypto` ([#2506])
+-   **BREAKING:** Make all `Slots.*` methods static in `@arkecosystem/crypto` ([#2473])
+-   **BREAKING:** Move interfaces, types and models in `@arkecosystem/crypto` ([#2379])
+-   Move mainnet exceptions to config in `@arkecosystem/crypto` ([#2529])
+-   **BREAKING:** Remove extraneous Client class in `@arkecosystem/crypto` ([#2417])
+-   **BREAKING:** Split the `Crypto` class into `Hash` and `Transaction` in `@arkecosystem/crypto` ([#2444])
 -   Invalidate blocks with expired transactions ([#2528])
 -   Transaction type agnostic wallet bootstrap to support AIP29 ([#2539])
 -   Return all schema errors in hapi-ajv ([#2571])
@@ -788,7 +883,7 @@ Fix release of `2.3.14` due to npm connectivity issues.
 ### Removed
 
 -   Removed the `transactionsFromIds` P2P endpoint ([#1911])
--   Removed the `validator` and `rules` fron `@tycoon69-labs/crypto` ([#2021])
+-   Removed the `validator` and `rules` fron `@arkecosystem/crypto` ([#2021])
 -   Ended support for the legacy multisignatures from the previous LISK fork ([#2057])
 
 ## [2.0.19] - 2019-01-31
@@ -880,6 +975,17 @@ Closed security vulnerabilities:
 -   Initial Release
 
 [unreleased]: https://github.com/ARKEcosystem/core/compare/master...develop
+[2.6.37]: https://github.com/ARKEcosystem/core/compare/2.6.36...2.6.37
+[2.6.36]: https://github.com/ARKEcosystem/core/compare/2.6.34...2.6.36
+[2.6.34]: https://github.com/ARKEcosystem/core/compare/2.6.31...2.6.34
+[2.6.31]: https://github.com/ARKEcosystem/core/compare/2.6.30...2.6.31
+[2.6.30]: https://github.com/ARKEcosystem/core/compare/2.6.29...2.6.30
+[2.6.29]: https://github.com/ARKEcosystem/core/compare/2.6.28...2.6.29
+[2.6.28]: https://github.com/ARKEcosystem/core/compare/2.6.27...2.6.28
+[2.6.27]: https://github.com/ARKEcosystem/core/compare/2.6.25...2.6.27
+[2.6.25]: https://github.com/ARKEcosystem/core/compare/2.6.24...2.6.25
+[2.6.24]: https://github.com/ARKEcosystem/core/compare/2.6.21...2.6.24
+[2.6.21]: https://github.com/ARKEcosystem/core/compare/2.6.11...2.6.21
 [2.6.11]: https://github.com/ARKEcosystem/core/compare/2.6.10...2.6.11
 [2.6.10]: https://github.com/ARKEcosystem/core/compare/2.6.9...2.6.10
 [2.6.9]: https://github.com/ARKEcosystem/core/compare/2.6.1...2.6.9
@@ -1397,11 +1503,37 @@ Closed security vulnerabilities:
 [#3489]: https://github.com/ARKEcosystem/core/pull/3489
 [#3498]: https://github.com/ARKEcosystem/core/pull/3498
 [#3502]: https://github.com/ARKEcosystem/core/pull/3502
+[#3504]: https://github.com/ARKEcosystem/core/pull/3504
 [#3505]: https://github.com/ARKEcosystem/core/pull/3505
 [#3507]: https://github.com/ARKEcosystem/core/pull/3507
 [#3510]: https://github.com/ARKEcosystem/core/pull/3510
 [#3518]: https://github.com/ARKEcosystem/core/pull/3518
+[#3523]: https://github.com/ARKEcosystem/core/pull/3523
+[#3524]: https://github.com/ARKEcosystem/core/pull/3524
 [#3537]: https://github.com/ARKEcosystem/core/pull/3537
+[#3541]: https://github.com/ARKEcosystem/core/pull/3541
+[#3551]: https://github.com/ARKEcosystem/core/pull/3551
+[#3560]: https://github.com/ARKEcosystem/core/pull/3560
+[#3561]: https://github.com/ARKEcosystem/core/pull/3561
+[#3562]: https://github.com/ARKEcosystem/core/pull/3562
+[#3567]: https://github.com/ARKEcosystem/core/pull/3567
+[#3570]: https://github.com/ARKEcosystem/core/pull/3570
+[#3573]: https://github.com/ARKEcosystem/core/pull/3573
+[#3574]: https://github.com/ARKEcosystem/core/pull/3574
+[#3575]: https://github.com/ARKEcosystem/core/pull/3575
+[#3590]: https://github.com/ARKEcosystem/core/pull/3590
+[#3594]: https://github.com/ARKEcosystem/core/pull/3594
+[#3596]: https://github.com/ARKEcosystem/core/pull/3596
+[#3598]: https://github.com/ARKEcosystem/core/pull/3598
+[#3605]: https://github.com/ARKEcosystem/core/pull/3605
+[#3614]: https://github.com/ARKEcosystem/core/pull/3614
+[#3659]: https://github.com/ARKEcosystem/core/pull/3659
+[#3665]: https://github.com/ARKEcosystem/core/pull/3665
+[#3667]: https://github.com/ARKEcosystem/core/pull/3667
+[#3669]: https://github.com/ARKEcosystem/core/pull/3669
+[#3678]: https://github.com/ARKEcosystem/core/pull/3678
+[#3695]: https://github.com/ARKEcosystem/core/pull/3695
+[#3746]: https://github.com/ARKEcosystem/core/pull/3746
 [032caa1b990e91937e4bc1561bc1aeaeca9e37d]: https://github.com/ARKEcosystem/core/commit/032caa1b990e91937e4bc1561bc1aeaeca9e37d9
 [1209a36366c8fd3ba31fab2463011b7ce1a7d84]: https://github.com/ARKEcosystem/core/commit/1209a36366c8fd3ba31fab2463011b7ce1a7d844
 [34749bf84bcec3fecd0098c0d42f52deb1f6ba4]: https://github.com/ARKEcosystem/core/commit/34749bf84bcec3fecd0098c0d42f52deb1f6ba4a

@@ -1,6 +1,6 @@
 import { app } from "@arkecosystem/core-container";
 import { Database, State } from "@arkecosystem/core-interfaces";
-import { Utils } from "@tycoon69-labs/crypto";
+import { Utils } from "@arkecosystem/crypto";
 import delay from "delay";
 import { defaults } from "../../../../packages/core-api/src/defaults";
 import { plugin } from "../../../../packages/core-api/src/plugin";

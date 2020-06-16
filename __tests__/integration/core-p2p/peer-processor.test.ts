@@ -3,7 +3,7 @@ import "jest-extended";
 import "./mocks/core-container";
 
 import { P2P } from "@arkecosystem/core-interfaces";
-import { Managers } from "@tycoon69-labs/crypto";
+import { Managers } from "@arkecosystem/crypto";
 import { createPeerService, createStubPeer } from "../../helpers/peers";
 import { MockSocketManager } from "./__support__/mock-socket-server/manager";
 import { eventEmitter } from "./mocks/core-container";

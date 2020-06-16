@@ -1,6 +1,6 @@
 import "jest-extended";
 
-import { Managers, Networks, Types, Utils } from "@tycoon69-labs/crypto";
+import { Managers, Networks, Types, Utils } from "@arkecosystem/crypto";
 import { Delegate } from "../../../packages/core-forger/src/delegate";
 import { TransactionFactory } from "../../helpers/transaction-factory";
 

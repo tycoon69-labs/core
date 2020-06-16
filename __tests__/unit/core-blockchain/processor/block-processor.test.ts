@@ -2,7 +2,7 @@ import "../mocks/";
 import { blockchain } from "../mocks/blockchain";
 import { database } from "../mocks/database";
 
-import { Blocks, Managers, Utils } from "@tycoon69-labs/crypto";
+import { Blocks, Managers, Utils } from "@arkecosystem/crypto";
 import { BlockProcessor, BlockProcessorResult } from "../../../../packages/core-blockchain/src/processor";
 import * as handlers from "../../../../packages/core-blockchain/src/processor/handlers";
 import {

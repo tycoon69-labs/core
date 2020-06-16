@@ -3,7 +3,7 @@
 import { app } from "@arkecosystem/core-container";
 import { ApplicationEvents } from "@arkecosystem/core-event-emitter";
 import { EventEmitter, Logger, P2P } from "@arkecosystem/core-interfaces";
-import { Utils } from "@tycoon69-labs/crypto";
+import { Utils } from "@arkecosystem/crypto";
 import { Peer } from "./peer";
 import { isValidVersion, isWhitelisted } from "./utils";
 
@@ -31,7 +31,7 @@ export class PeerProcessor implements P2P.IPeerProcessor {
         this.connector = connector;
         this.storage = storage;
 
-        this.emitter.on("internal.milestone.changed", () => {
+        this.emitter.on(ApplicationEvents.InternalMilestoneChanged, () => {
             this.updatePeersAfterMilestoneChange();
         });
     }

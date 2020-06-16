@@ -1,5 +1,5 @@
 import { Delegate } from "@arkecosystem/core-forger";
-import { Interfaces, Networks, Utils } from "@tycoon69-labs/crypto";
+import { Interfaces, Networks, Utils } from "@arkecosystem/crypto";
 import { delegates, genesisBlock } from "../utils/fixtures/unitnet";
 
 export class BlockFactory {

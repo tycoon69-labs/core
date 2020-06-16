@@ -1,4 +1,4 @@
-import { Enums } from "@tycoon69-labs/crypto";
+import { Enums } from "@arkecosystem/crypto";
 import Joi from "@hapi/joi";
 import { lockIteratees, transactionIteratees } from "../shared/iteratees";
 import { address, orderBy, pagination, publicKey } from "../shared/schemas";

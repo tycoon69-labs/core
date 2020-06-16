@@ -1,5 +1,5 @@
 import { TransactionPool } from "@arkecosystem/core-interfaces";
-import { Interfaces } from "@tycoon69-labs/crypto";
+import { Interfaces } from "@arkecosystem/crypto";
 
 export interface ITransactionsCached {
     added: Interfaces.ITransactionData[];

@@ -1,5 +1,5 @@
 import { Database } from "@arkecosystem/core-interfaces";
-import { Interfaces } from "@tycoon69-labs/crypto";
+import { Interfaces } from "@arkecosystem/crypto";
 import { SearchParameterConverter } from "./utils/search-parameter-converter";
 
 export class BlocksBusinessRepository implements Database.IBlocksBusinessRepository {

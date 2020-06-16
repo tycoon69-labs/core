@@ -1,7 +1,7 @@
 const {
     Crypto,
     Transactions
-} = require('@tycoon69-labs/crypto')
+} = require('@arkecosystem/crypto')
 const createHash = require("create-hash");
 
 const nodeSha256 = (bytes) => createHash("sha256").update(bytes).digest()

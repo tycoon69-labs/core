@@ -2,7 +2,7 @@ import { app } from "@arkecosystem/core-container";
 import { Database, State } from "@arkecosystem/core-interfaces";
 import { Wallets } from "@arkecosystem/core-state";
 import { Handlers } from "@arkecosystem/core-transactions";
-import { Identities, Interfaces } from "@tycoon69-labs/crypto";
+import { Identities, Interfaces } from "@arkecosystem/crypto";
 import clonedeep from "lodash.clonedeep";
 
 export class WalletManager extends Wallets.WalletManager {

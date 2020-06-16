@@ -10,7 +10,7 @@ import {
     State,
     TransactionPool,
 } from "@arkecosystem/core-interfaces";
-import { Blocks, Crypto, Interfaces, Managers, Utils } from "@tycoon69-labs/crypto";
+import { Blocks, Crypto, Interfaces, Managers, Utils } from "@arkecosystem/crypto";
 
 import { isBlockChained, roundCalculator } from "@arkecosystem/core-utils";
 import async from "async";
@@ -63,6 +63,7 @@ export class Blockchain implements blockchain.IBlockchain {
     protected blockProcessor: BlockProcessor;
     private actions: any;
     private missedBlocks: number = 0;
+    private lastCheckNetworkHealthTs: number = 0;
 
     /**
      * Create a new blockchain manager instance.
@@ -236,6 +237,15 @@ export class Blockchain implements blockchain.IBlockchain {
 
         const currentSlot: number = Crypto.Slots.getSlotNumber();
         const receivedSlot: number = Crypto.Slots.getSlotNumber(block.timestamp);
+
+        if (fromForger) {
+            const minimumMs: number = 2000;
+            const timeLeftInMs: number = Crypto.Slots.getTimeInMsUntilNextSlot();
+            if (currentSlot !== receivedSlot || timeLeftInMs < minimumMs) {
+                logger.info(`Discarded block ${block.height.toLocaleString()} because it was received too late.`);
+                return;
+            }
+        }
 
         if (receivedSlot > currentSlot) {
             logger.info(`Discarded block ${block.height.toLocaleString()} because it takes a future slot.`);
@@ -575,13 +585,20 @@ export class Blockchain implements blockchain.IBlockchain {
             this.missedBlocks >= Managers.configManager.getMilestone().activeDelegates / 3 - 1 &&
             Math.random() <= 0.8
         ) {
+            this.missedBlocks = 0;
+
+            // do not check network health here more than every 10 minutes
+            const nowTs = Date.now();
+            if (nowTs - this.lastCheckNetworkHealthTs < 10 * 60 * 1000) {
+                return;
+            }
+            this.lastCheckNetworkHealthTs = nowTs;
+
             const networkStatus = await this.p2p.getMonitor().checkNetworkHealth();
             if (networkStatus.forked) {
                 this.state.numberOfBlocksToRollback = networkStatus.blocksToRollback;
                 this.dispatch("FORK");
             }
-
-            this.missedBlocks = 0;
         }
     }
 }

@@ -5,7 +5,7 @@ import {
     Enums,
     Transactions as MagistrateTransactions,
 } from "@arkecosystem/core-magistrate-crypto";
-import { Errors, Managers, Transactions, Utils } from "@tycoon69-labs/crypto";
+import { Errors, Managers, Transactions, Utils } from "@arkecosystem/crypto";
 import {
     bridgechainRegistrationAsset1,
     bridgechainRegistrationAsset2,

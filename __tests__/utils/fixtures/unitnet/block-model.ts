@@ -1,4 +1,4 @@
-import { Blocks, Managers } from "@tycoon69-labs/crypto";
+import { Blocks, Managers } from "@arkecosystem/crypto";
 import { genesisBlock as GB } from "../../config/unitnet/genesisBlock";
 
 Managers.configManager.setFromPreset("unitnet");

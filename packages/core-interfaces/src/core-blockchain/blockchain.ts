@@ -1,4 +1,4 @@
-import { Interfaces } from "@tycoon69-labs/crypto";
+import { Interfaces } from "@arkecosystem/crypto";
 import { IDatabaseService } from "../core-database";
 import { IPeerService } from "../core-p2p";
 import { IStateStore } from "../core-state";

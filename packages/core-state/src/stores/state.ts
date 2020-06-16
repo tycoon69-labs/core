@@ -1,8 +1,9 @@
 // tslint:disable:variable-name
 
 import { app } from "@arkecosystem/core-container";
+import { ApplicationEvents } from "@arkecosystem/core-event-emitter";
 import { EventEmitter, Logger, State } from "@arkecosystem/core-interfaces";
-import { Interfaces, Managers } from "@tycoon69-labs/crypto";
+import { Interfaces, Managers } from "@arkecosystem/crypto";
 import assert from "assert";
 import { OrderedMap, OrderedSet, Seq } from "immutable";
 
@@ -99,7 +100,9 @@ export class StateStore implements State.IStateStore {
         Managers.configManager.setHeight(block.data.height);
 
         if (Managers.configManager.isNewMilestone()) {
-            app.resolvePlugin<EventEmitter.EventEmitter>("event-emitter").emit("internal.milestone.changed");
+            app.resolvePlugin<EventEmitter.EventEmitter>("event-emitter").emit(
+                ApplicationEvents.InternalMilestoneChanged,
+            );
         }
 
         // Delete oldest block if size exceeds the maximum
@@ -238,7 +241,7 @@ export class StateStore implements State.IStateStore {
         if (this.blockPing) {
             app.resolvePlugin<Logger.ILogger>("logger").info(
                 `Previous block ${this.blockPing.block.height.toLocaleString()} pinged blockchain ${
-                this.blockPing.count
+                    this.blockPing.count
                 } times`,
             );
         }

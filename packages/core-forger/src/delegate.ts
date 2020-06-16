@@ -1,4 +1,4 @@
-import { Blocks, Crypto, Identities, Interfaces, Types, Utils } from "@tycoon69-labs/crypto";
+import { Blocks, Crypto, Identities, Interfaces, Types, Utils } from "@arkecosystem/crypto";
 import forge from "node-forge";
 import wif from "wif";
 

@@ -1,4 +1,4 @@
-import { Crypto, Enums, Identities } from "@tycoon69-labs/crypto";
+import { Crypto, Enums, Identities } from "@arkecosystem/crypto";
 import { TransactionFactory } from "../../helpers/transaction-factory";
 import { secrets } from "../../utils/config/testnet/delegates.json";
 import * as support from "./__support__";

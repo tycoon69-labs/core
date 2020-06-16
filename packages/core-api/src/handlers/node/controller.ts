@@ -1,7 +1,7 @@
 import { app } from "@arkecosystem/core-container";
 import { Database } from "@arkecosystem/core-interfaces";
 import { Handlers } from "@arkecosystem/core-transactions";
-import { Crypto, Managers } from "@tycoon69-labs/crypto";
+import { Crypto, Managers } from "@arkecosystem/crypto";
 import Boom from "@hapi/boom";
 import Hapi from "@hapi/hapi";
 import { spawnSync } from "child_process";

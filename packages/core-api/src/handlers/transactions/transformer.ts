@@ -1,7 +1,7 @@
 import { app } from "@arkecosystem/core-container";
 import { Blockchain, Database } from "@arkecosystem/core-interfaces";
 import { formatTimestamp } from "@arkecosystem/core-utils";
-import { Interfaces, Transactions } from "@tycoon69-labs/crypto";
+import { Interfaces, Transactions } from "@arkecosystem/crypto";
 
 export const transformTransaction = (model, transform) => {
     const blockchain = app.resolvePlugin<Blockchain.IBlockchain>("blockchain");

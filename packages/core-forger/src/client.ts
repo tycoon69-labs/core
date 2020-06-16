@@ -1,7 +1,7 @@
 import { app } from "@arkecosystem/core-container";
 import { Logger, P2P } from "@arkecosystem/core-interfaces";
 import { codec, NetworkState, NetworkStateStatus, socketEmit } from "@arkecosystem/core-p2p";
-import { Blocks, Interfaces } from "@tycoon69-labs/crypto";
+import { Blocks, Interfaces } from "@arkecosystem/crypto";
 import delay from "delay";
 import socketCluster from "socketcluster-client";
 import { HostNoResponseError, RelayCommunicationError } from "./errors";

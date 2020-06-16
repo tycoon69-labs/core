@@ -1,4 +1,4 @@
-import { Identities, Utils } from "@tycoon69-labs/crypto";
+import { Identities, Utils } from "@arkecosystem/crypto";
 import { flags } from "@oclif/command";
 import { satoshiFlag } from "../../flags";
 import { SendCommand } from "../../shared/send";

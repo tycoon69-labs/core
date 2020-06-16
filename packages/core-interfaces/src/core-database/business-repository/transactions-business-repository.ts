@@ -1,4 +1,4 @@
-import { Interfaces } from "@tycoon69-labs/crypto";
+import { Interfaces } from "@arkecosystem/crypto";
 import { IParameters } from "./parameters";
 
 export interface ITransactionsPaginated {

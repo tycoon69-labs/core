@@ -1,5 +1,5 @@
 import { OrderedCappedMap } from "@arkecosystem/core-utils";
-import { Interfaces } from "@tycoon69-labs/crypto";
+import { Interfaces } from "@arkecosystem/crypto";
 import assert from "assert";
 
 export class BlockStore {

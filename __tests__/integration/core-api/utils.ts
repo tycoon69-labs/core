@@ -2,7 +2,7 @@ import "jest-extended";
 
 import { app } from "@arkecosystem/core-container";
 import { httpie } from "@arkecosystem/core-utils";
-import { Managers } from "@tycoon69-labs/crypto";
+import { Managers } from "@arkecosystem/crypto";
 import { TransactionFactory } from "../../helpers";
 import { ApiHelpers } from "../../utils/helpers/api";
 

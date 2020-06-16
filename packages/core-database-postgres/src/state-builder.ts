@@ -2,7 +2,7 @@ import { app } from "@arkecosystem/core-container";
 import { ApplicationEvents } from "@arkecosystem/core-event-emitter";
 import { Database, EventEmitter, Logger, State } from "@arkecosystem/core-interfaces";
 import { Handlers } from "@arkecosystem/core-transactions";
-import { Utils } from "@tycoon69-labs/crypto";
+import { Utils } from "@arkecosystem/crypto";
 
 export class StateBuilder {
     private readonly logger: Logger.ILogger = app.resolvePlugin<Logger.ILogger>("logger");

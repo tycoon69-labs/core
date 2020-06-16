@@ -1,7 +1,7 @@
 import "jest-extended";
 
 import { httpie } from "@arkecosystem/core-utils";
-import { Managers, Utils } from "@tycoon69-labs/crypto";
+import { Managers, Utils } from "@arkecosystem/crypto";
 import nock from "nock";
 import { MultiPaymentCommand } from "../../../../../packages/core-tester-cli/src/commands/send/multi-payment";
 import { arkToSatoshi, captureTransactions, toFlags } from "../../shared";

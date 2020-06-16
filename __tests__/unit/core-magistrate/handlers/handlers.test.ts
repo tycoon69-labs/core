@@ -2,7 +2,7 @@ import "jest-extended";
 
 import { Enums } from "@arkecosystem/core-magistrate-crypto";
 import { Handlers } from "@arkecosystem/core-transactions";
-import { Managers } from "@tycoon69-labs/crypto";
+import { Managers } from "@arkecosystem/crypto";
 import {
     BridgechainRegistrationTransactionHandler,
     BridgechainResignationTransactionHandler,

@@ -3,7 +3,7 @@ import "../../../../mocks/core-container";
 import { getCurrentRound } from "../../../../../../../packages/core-p2p/src/socket-server/versions/internal";
 import { delegates } from "../../../../../../utils/fixtures/testnet/delegates";
 
-import { Crypto } from "@tycoon69-labs/crypto";
+import { Crypto } from "@arkecosystem/crypto";
 
 const timestampSlots = 104;
 Crypto.Slots.getTime = jest.fn().mockReturnValue(timestampSlots);

@@ -1,7 +1,7 @@
 import { app } from "@arkecosystem/core-container";
 import { Logger, Shared, State } from "@arkecosystem/core-interfaces";
 import { Handlers, Interfaces as TransactionInterfaces } from "@arkecosystem/core-transactions";
-import { Enums, Identities, Interfaces, Utils } from "@tycoon69-labs/crypto";
+import { Enums, Identities, Interfaces, Utils } from "@arkecosystem/crypto";
 import pluralize from "pluralize";
 import { WalletIndexAlreadyRegisteredError, WalletIndexNotFoundError } from "./errors";
 import { TempWalletManager } from "./temp-wallet-manager";
@@ -481,15 +481,19 @@ export class WalletManager implements State.IWalletManager {
             const vote: string = transaction.asset.votes[0];
             const delegate: State.IWallet = this.findByPublicKey(vote.substr(1));
             let voteBalance: Utils.BigNumber = delegate.getAttribute("delegate.voteBalance", Utils.BigNumber.ZERO);
+            const senderLockedBalance: Utils.BigNumber = sender.getAttribute(
+                "htlc.lockedBalance",
+                Utils.BigNumber.ZERO,
+            );
 
             if (vote.startsWith("+")) {
                 voteBalance = revert
-                    ? voteBalance.minus(sender.balance.minus(transaction.fee))
-                    : voteBalance.plus(sender.balance);
+                    ? voteBalance.minus(sender.balance.minus(transaction.fee)).minus(senderLockedBalance)
+                    : voteBalance.plus(sender.balance).plus(senderLockedBalance);
             } else {
                 voteBalance = revert
-                    ? voteBalance.plus(sender.balance)
-                    : voteBalance.minus(sender.balance.plus(transaction.fee));
+                    ? voteBalance.plus(sender.balance).plus(senderLockedBalance)
+                    : voteBalance.minus(sender.balance.plus(transaction.fee)).minus(senderLockedBalance);
             }
 
             delegate.setAttribute("delegate.voteBalance", voteBalance);

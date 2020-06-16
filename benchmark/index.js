@@ -3,7 +3,7 @@ const {
 } = require('@faustbrian/benchmarker');
 const {
     Managers
-} = require("@tycoon69-labs/crypto");
+} = require("@arkecosystem/crypto");
 
 Managers.configManager.setFromPreset("mainnet");
 

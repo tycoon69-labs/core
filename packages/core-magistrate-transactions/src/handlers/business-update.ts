@@ -6,7 +6,7 @@ import {
     Transactions as MagistrateTransactions,
 } from "@arkecosystem/core-magistrate-crypto";
 import { Handlers, TransactionReader } from "@arkecosystem/core-transactions";
-import { Interfaces, Transactions } from "@tycoon69-labs/crypto";
+import { Interfaces, Transactions } from "@arkecosystem/crypto";
 import { BusinessIsNotRegisteredError, BusinessIsResignedError } from "../errors";
 import { MagistrateApplicationEvents } from "../events";
 import { IBusinessWalletAttributes } from "../interfaces";

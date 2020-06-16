@@ -1,6 +1,6 @@
 const {
     Transactions
-} = require('@tycoon69-labs/crypto')
+} = require('@arkecosystem/crypto')
 
 exports.deserialize = data => {
     return Transactions.Deserializer.deserialize(data)

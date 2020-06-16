@@ -1,6 +1,6 @@
 import "../../../../../packages/core-jest-matchers/src/transactions/types/ipfs";
 
-import { Enums } from "@tycoon69-labs/crypto";
+import { Enums } from "@arkecosystem/crypto";
 const { TransactionType } = Enums;
 
 describe(".toBeIpfsType", () => {

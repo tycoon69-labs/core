@@ -8,7 +8,7 @@ import {
 import { businessIndexer, MagistrateIndex } from "@arkecosystem/core-magistrate-transactions/src/wallet-manager";
 import { Wallets } from "@arkecosystem/core-state";
 import { Handlers } from "@arkecosystem/core-transactions";
-import { Managers, Utils } from "@tycoon69-labs/crypto";
+import { Managers, Utils } from "@arkecosystem/crypto";
 import { BusinessAlreadyRegisteredError } from "../../../../packages/core-magistrate-transactions/src/errors";
 import { BusinessRegistrationTransactionHandler } from "../../../../packages/core-magistrate-transactions/src/handlers";
 import { IBusinessWalletAttributes } from "../../../../packages/core-magistrate-transactions/src/interfaces";

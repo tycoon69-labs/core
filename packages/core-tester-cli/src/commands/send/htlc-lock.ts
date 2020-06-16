@@ -1,4 +1,4 @@
-import { Identities } from "@tycoon69-labs/crypto";
+import { Identities } from "@arkecosystem/crypto";
 import { flags } from "@oclif/command";
 import { satoshiFlag } from "../../flags";
 import { htlcSecretHashHex } from "../../shared/htlc-secret";

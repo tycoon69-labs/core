@@ -1,6 +1,6 @@
 import "../../../../../packages/core-jest-matchers/src/transactions/types/vote";
 
-import { Enums } from "@tycoon69-labs/crypto";
+import { Enums } from "@arkecosystem/crypto";
 const { TransactionType } = Enums;
 
 describe(".toBeVoteType", () => {

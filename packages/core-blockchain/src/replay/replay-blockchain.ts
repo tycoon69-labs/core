@@ -2,7 +2,7 @@ import { app } from "@arkecosystem/core-container";
 import { Database, Logger, P2P, Shared, State, TransactionPool } from "@arkecosystem/core-interfaces";
 import { Wallets } from "@arkecosystem/core-state";
 import { roundCalculator } from "@arkecosystem/core-utils";
-import { Blocks, Enums, Interfaces, Managers, Utils } from "@tycoon69-labs/crypto";
+import { Blocks, Enums, Interfaces, Managers, Utils } from "@arkecosystem/crypto";
 import { Blockchain } from "../blockchain";
 import { FailedToReplayBlocksError } from "./errors";
 import { MemoryDatabaseService } from "./memory-database-service";
@@ -100,6 +100,8 @@ export class ReplayBlockchain extends Blockchain {
     }
 
     private async processGenesisBlock(): Promise<void> {
+        Managers.configManager.setHeight(1);
+
         const genesisBlock: Interfaces.IBlock = Blocks.BlockFactory.fromJson(
             Managers.configManager.get("genesisBlock"),
         );
@@ -148,6 +150,8 @@ export class ReplayBlockchain extends Blockchain {
             roundInfo,
             delegates,
         );
+
+        this.memoryDatabase.restoreCurrentRound(1);
 
         this.logger.info("Finished loading genesis block.");
     }

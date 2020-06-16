@@ -1,7 +1,7 @@
-import { Managers } from "@tycoon69-labs/crypto";
-import devnetMilestones from "@tycoon69-labs/crypto/src/networks/devnet/milestones.json";
-import mainnetMilestones from "@tycoon69-labs/crypto/src/networks/mainnet/milestones.json";
-import unitnetMilestones from "@tycoon69-labs/crypto/src/networks/unitnet/milestones.json";
+import { Managers } from "@arkecosystem/crypto";
+import devnetMilestones from "@arkecosystem/crypto/src/networks/devnet/milestones.json";
+import mainnetMilestones from "@arkecosystem/crypto/src/networks/mainnet/milestones.json";
+import unitnetMilestones from "@arkecosystem/crypto/src/networks/unitnet/milestones.json";
 import { getMaxTransactionBytes } from "../../../packages/core-transaction-pool/src/utils";
 
 const store = {

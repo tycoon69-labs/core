@@ -6,7 +6,7 @@ import ByteBuffer from "bytebuffer";
 
 import { Wallets } from "@arkecosystem/core-state";
 import { Handlers } from "@arkecosystem/core-transactions";
-import { Constants, Crypto, Enums, Identities, Interfaces, Managers, Transactions, Utils } from "@tycoon69-labs/crypto";
+import { Constants, Crypto, Enums, Identities, Interfaces, Managers, Transactions, Utils } from "@arkecosystem/crypto";
 import { Connection } from "../../../packages/core-transaction-pool/src/connection";
 import { defaults } from "../../../packages/core-transaction-pool/src/defaults";
 import { Memory } from "../../../packages/core-transaction-pool/src/memory";

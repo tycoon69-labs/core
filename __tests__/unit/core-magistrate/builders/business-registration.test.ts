@@ -5,7 +5,7 @@ import {
     Enums,
     Transactions as MagistrateTransactions,
 } from "@arkecosystem/core-magistrate-crypto";
-import { Managers, Transactions, Utils } from "@tycoon69-labs/crypto";
+import { Managers, Transactions, Utils } from "@arkecosystem/crypto";
 
 let builder: MagistrateBuilders.BusinessRegistrationBuilder;
 

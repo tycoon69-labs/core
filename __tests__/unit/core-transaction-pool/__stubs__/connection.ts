@@ -1,5 +1,5 @@
 import { TransactionPool } from "@arkecosystem/core-interfaces";
-import { Blocks, Enums, Interfaces } from "@tycoon69-labs/crypto";
+import { Blocks, Enums, Interfaces } from "@arkecosystem/crypto";
 import { ITransactionsProcessed } from "../../../../packages/core-transaction-pool/src/interfaces";
 import { Memory } from "../../../../packages/core-transaction-pool/src/memory";
 import { Storage } from "../../../../packages/core-transaction-pool/src/storage";
@@ -67,6 +67,10 @@ export class Connection implements TransactionPool.IConnection {
 
     public removeTransactionsById(ids: string[]): void {
         return;
+    }
+
+    public getAllTransactions(): Interfaces.ITransaction[] {
+        return [];
     }
 
     public async getTransactionsForForging(blockSize: number): Promise<string[]> {

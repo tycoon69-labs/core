@@ -1,5 +1,5 @@
 import { Database, State, TransactionPool } from "@arkecosystem/core-interfaces";
-import { Identities, Interfaces, Transactions, Utils } from "@tycoon69-labs/crypto";
+import { Identities, Interfaces, Transactions, Utils } from "@arkecosystem/crypto";
 import {
     InvalidMultiSignatureError,
     MultiSignatureAlreadyRegisteredError,

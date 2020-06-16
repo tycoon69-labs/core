@@ -1,4 +1,4 @@
-import { Transactions } from "@tycoon69-labs/crypto";
+import { Transactions } from "@arkecosystem/crypto";
 
 export { };
 

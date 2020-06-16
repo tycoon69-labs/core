@@ -3,7 +3,7 @@
 import { app } from "@arkecosystem/core-container";
 import { ApplicationEvents } from "@arkecosystem/core-event-emitter/dist";
 import { Blockchain, EventEmitter, Logger, P2P } from "@arkecosystem/core-interfaces";
-import { Interfaces } from "@tycoon69-labs/crypto";
+import { Interfaces } from "@arkecosystem/crypto";
 import delay from "delay";
 import groupBy from "lodash.groupby";
 import shuffle from "lodash.shuffle";

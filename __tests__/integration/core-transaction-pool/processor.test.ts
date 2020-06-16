@@ -2,13 +2,13 @@ import "jest-extended";
 
 import { Blockchain, Container, State, TransactionPool } from "@arkecosystem/core-interfaces";
 import { Handlers } from "@arkecosystem/core-transactions";
-import { Blocks, Crypto, Identities, Interfaces, Managers, Utils } from "@tycoon69-labs/crypto";
+import { Blocks, Crypto, Identities, Interfaces, Managers, Utils } from "@arkecosystem/crypto";
 import { generateMnemonic } from "bip39";
 import { TransactionFactory } from "../../helpers/transaction-factory";
 import { delegates, wallets, wallets2ndSig } from "../../utils/fixtures/unitnet";
 import { generateWallets } from "../../utils/generators/wallets";
 import { setUpFull, tearDownFull } from "./__support__/setup";
-// import { Crypto, Enums, Managers } from "@tycoon69-labs/crypto";
+// import { Crypto, Enums, Managers } from "@arkecosystem/crypto";
 // import { Connection } from "../../../packages/core-transaction-pool/src/connection";
 // import { delegates, wallets } from "../../utils/fixtures/unitnet";
 
@@ -37,6 +37,77 @@ beforeEach(() => {
 
 describe("Transaction Guard", () => {
     describe("validate", () => {
+        it("should update recipient pool wallet balance when receiving a multipayment", async () => {
+            const walletGen = generateWallets("unitnet", 1)[0];
+            const wallet = transactionPool.walletManager.findByAddress(walletGen.address);
+
+            const block = {
+                id: "17882607875259085966",
+                version: 0,
+                timestamp: 46583330,
+                height: 2,
+                reward: Utils.BigNumber.make(0),
+                previousBlock: "17882607875259085966",
+                numberOfTransactions: 1,
+                transactions: [],
+                totalAmount: Utils.BigNumber.make(0),
+                totalFee: Utils.BigNumber.make(0),
+                payloadLength: 0,
+                payloadHash: "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                generatorPublicKey: delegates[0].publicKey,
+                blockSignature:
+                    "3045022100e7385c6ea42bd950f7f6ab8c8619cf2f66a41d8f8f185b0bc99af032cb25f30d02200b6210176a6cedfdcbe483167fd91c21d740e0e4011d24d679c601fdd46b0de9",
+                createdAt: "2019-07-11T16:48:50.550Z",
+            };
+
+            let tx = TransactionFactory.transfer(walletGen.address, 1 * 100000000)
+                .withNetwork("unitnet")
+                .withPassphrase(wallets[0].passphrase)
+                .build()[0];
+
+            block.transactions = [tx.data];
+            transactionPool.acceptChainedBlock(Blocks.BlockFactory.fromData(block));
+
+            // simulate forged transaction
+            const transactionHandler = await Handlers.Registry.get(tx.type);
+            transactionHandler.applyToRecipient(tx, transactionPool.walletManager);
+
+            tx = TransactionFactory.transfer(wallets[0].address, 1)
+                .withNetwork("unitnet")
+                .withPassphrase(walletGen.passphrase)
+                .build()[0];
+
+            block.transactions = [tx.data];
+            transactionPool.acceptChainedBlock(Blocks.BlockFactory.fromData(block));
+
+            // simulate forged transaction
+            transactionHandler.applyToRecipient(tx, transactionPool.walletManager);
+
+            transactionPool.walletManager.reindex(wallet);
+
+            tx = TransactionFactory.multiPayment([
+                { recipientId: wallets[0].address, amount: "500000000" },
+                { recipientId: walletGen.address, amount: "500000000" },
+            ])
+                .withNetwork("unitnet")
+                .withPassphrase(wallets[0].passphrase)
+                .build()[0];
+
+            block.transactions = [tx.data];
+            transactionPool.acceptChainedBlock(Blocks.BlockFactory.fromData(block));
+
+            container.resolvePlugin("database").walletManager.reindex(wallet);
+
+            const transaction = TransactionFactory.transfer(walletGen.address, 2 * 100000000)
+                .withNetwork("unitnet")
+                .withNonce(wallet.nonce.plus(1))
+                .withPassphrase(walletGen.passphrase)
+                .build()[0];
+
+            await processor.validate([transaction.data]);
+            expect(processor.getErrors()[transaction.id]).toBeUndefined();
+        });
+
         it.each([false, true])(
             "should not apply transactions for chained transfers involving cold wallets",
             async inverseOrder => {

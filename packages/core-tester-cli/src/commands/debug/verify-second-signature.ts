@@ -1,4 +1,4 @@
-import { Managers, Transactions, Types } from "@tycoon69-labs/crypto";
+import { Managers, Transactions, Types } from "@arkecosystem/crypto";
 import { flags } from "@oclif/command";
 import { handleOutput } from "../../utils";
 import { BaseCommand } from "../command";

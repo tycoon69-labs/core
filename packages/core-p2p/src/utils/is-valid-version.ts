@@ -1,6 +1,6 @@
 import { app } from "@arkecosystem/core-container";
 import { P2P } from "@arkecosystem/core-interfaces";
-import { Managers } from "@tycoon69-labs/crypto";
+import { Managers } from "@arkecosystem/crypto";
 import semver from "semver";
 
 export const isValidVersion = (peer: P2P.IPeer): boolean => {

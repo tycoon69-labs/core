@@ -4,7 +4,7 @@ import { Database, EventEmitter, Logger, Shared, State } from "@arkecosystem/cor
 import { Wallets } from "@arkecosystem/core-state";
 import { Handlers } from "@arkecosystem/core-transactions";
 import { roundCalculator } from "@arkecosystem/core-utils";
-import { Blocks, Crypto, Identities, Interfaces, Managers, Transactions, Utils } from "@tycoon69-labs/crypto";
+import { Blocks, Crypto, Identities, Interfaces, Managers, Transactions, Utils } from "@arkecosystem/crypto";
 import assert from "assert";
 import cloneDeep from "lodash.clonedeep";
 

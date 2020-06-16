@@ -1,6 +1,6 @@
 import "jest-extended";
 
-import { Utils } from "@tycoon69-labs/crypto";
+import { Utils } from "@arkecosystem/crypto";
 import { TransactionType } from "../../../../../../packages/crypto/src/enums";
 import { BuilderFactory, IpfsTransaction } from "../../../../../../packages/crypto/src/transactions";
 import { IPFSBuilder } from "../../../../../../packages/crypto/src/transactions/builders/transactions/ipfs";

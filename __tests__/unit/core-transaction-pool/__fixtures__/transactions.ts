@@ -1,4 +1,4 @@
-import { Utils } from "@tycoon69-labs/crypto";
+import { Utils } from "@arkecosystem/crypto";
 import { TransactionFactory } from "../../../helpers/transaction-factory";
 import { delegates } from "../../../utils/fixtures/unitnet/delegates";
 

@@ -1,4 +1,4 @@
-import { Interfaces, Managers } from "@tycoon69-labs/crypto";
+import { Interfaces, Managers } from "@arkecosystem/crypto";
 import { BlockStore } from "../../../../packages/core-state/src/stores/blocks";
 import { BlockFactory } from '../../../helpers';
 

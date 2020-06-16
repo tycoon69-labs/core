@@ -1,4 +1,4 @@
-import { Utils } from "@tycoon69-labs/crypto/src";
+import { Utils } from "@arkecosystem/crypto/src";
 
 /* tslint:disable:max-line-length */
 export const blocks = [

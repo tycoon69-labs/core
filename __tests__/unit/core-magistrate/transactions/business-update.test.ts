@@ -2,7 +2,7 @@ import "jest-extended";
 
 import { Builders as MagistrateBuilders } from "@arkecosystem/core-magistrate-crypto";
 import { Transactions as MagistrateTransactions } from "@arkecosystem/core-magistrate-crypto";
-import { Managers, Transactions, Validation as Ajv } from "@tycoon69-labs/crypto";
+import { Managers, Transactions, Validation as Ajv } from "@arkecosystem/crypto";
 import { businessUpdateAsset1, businessUpdateAsset2, businessUpdateAsset3, checkCommonFields } from "../helper";
 
 let builder: MagistrateBuilders.BusinessUpdateBuilder;

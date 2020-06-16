@@ -1,4 +1,4 @@
-import { Validation } from "@tycoon69-labs/crypto";
+import { Validation } from "@arkecosystem/crypto";
 import ip from "ip";
 
 export const validateJSON = (data, schema) => {

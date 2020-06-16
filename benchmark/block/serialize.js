@@ -1,6 +1,6 @@
 const {
     Blocks
-} = require('@tycoon69-labs/crypto')
+} = require('@arkecosystem/crypto')
 
 const data = require('../helpers').getJSONFixture('block/deserialized/no-transactions');
 

@@ -2,7 +2,7 @@ import "jest-extended";
 
 import { State, TransactionPool } from "@arkecosystem/core-interfaces";
 import { Wallets } from "@arkecosystem/core-state";
-import { Crypto, Enums, Errors, Identities, Interfaces, Managers, Transactions, Utils } from "@tycoon69-labs/crypto";
+import { Crypto, Enums, Errors, Identities, Interfaces, Managers, Transactions, Utils } from "@arkecosystem/crypto";
 import {
     AlreadyVotedError,
     HtlcLockExpiredError,

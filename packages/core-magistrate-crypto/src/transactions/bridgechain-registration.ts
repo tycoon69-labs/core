@@ -1,4 +1,4 @@
-import { Transactions, Utils } from "@tycoon69-labs/crypto";
+import { Transactions, Utils } from "@arkecosystem/crypto";
 import ByteBuffer from "bytebuffer";
 import { MagistrateTransactionGroup, MagistrateTransactionStaticFees, MagistrateTransactionType } from "../enums";
 import { IBridgechainPorts, IBridgechainRegistrationAsset } from "../interfaces";

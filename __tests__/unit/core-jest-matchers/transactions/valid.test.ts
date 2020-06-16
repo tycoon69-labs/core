@@ -1,4 +1,4 @@
-import { Interfaces, Managers } from "@tycoon69-labs/crypto";
+import { Interfaces, Managers } from "@arkecosystem/crypto";
 import "../../../../packages/core-jest-matchers/src/transactions/valid";
 import { TransactionFactory } from '../../../helpers/transaction-factory';
 

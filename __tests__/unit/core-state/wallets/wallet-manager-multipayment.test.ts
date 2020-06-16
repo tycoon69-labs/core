@@ -1,6 +1,6 @@
 /* tslint:disable:max-line-length no-empty */
 import { State } from "@arkecosystem/core-interfaces";
-import { Identities, Managers, Transactions, Utils } from "@tycoon69-labs/crypto";
+import { Identities, Managers, Transactions, Utils } from "@arkecosystem/crypto";
 import { Wallet, WalletManager } from "../../../../packages/core-state/src/wallets";
 
 jest.mock("@arkecosystem/core-container", () => {

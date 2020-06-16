@@ -1,6 +1,6 @@
 "use strict";
 
-const { Managers } = require("@tycoon69-labs/crypto");
+const { Managers } = require("@arkecosystem/crypto");
 const utils = require("./utils");
 const testUtils = require("../../../../lib/utils/test-utils");
 const { TransactionFactory } = require('../../../../../helpers/transaction-factory');

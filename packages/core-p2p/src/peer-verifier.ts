@@ -2,7 +2,7 @@
 import { app } from "@arkecosystem/core-container";
 import { Database, Logger, P2P, Shared, State } from "@arkecosystem/core-interfaces";
 import { CappedSet, NSect, roundCalculator } from "@arkecosystem/core-utils";
-import { Blocks, Interfaces } from "@tycoon69-labs/crypto";
+import { Blocks, Interfaces } from "@arkecosystem/crypto";
 import assert from "assert";
 import pluralize from "pluralize";
 import { inspect } from "util";

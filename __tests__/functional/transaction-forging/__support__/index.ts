@@ -2,8 +2,8 @@ import "jest-extended";
 
 import { Blockchain, Container, Database, State } from "@arkecosystem/core-interfaces";
 import { Wallets } from "@arkecosystem/core-state";
-import { Identities, Managers, Utils } from "@tycoon69-labs/crypto";
-import { Crypto } from "@tycoon69-labs/crypto";
+import { Identities, Managers, Utils } from "@arkecosystem/crypto";
+import { Crypto } from "@arkecosystem/crypto";
 import delay from "delay";
 import cloneDeep from "lodash.clonedeep";
 import { secrets } from "../../../utils/config/testnet/delegates.json";

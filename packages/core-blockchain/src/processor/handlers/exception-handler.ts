@@ -1,4 +1,4 @@
-import { Interfaces } from "@tycoon69-labs/crypto";
+import { Interfaces } from "@arkecosystem/crypto";
 import { BlockProcessorResult } from "../block-processor";
 import { AcceptBlockHandler } from "./accept-block-handler";
 import { BlockHandler } from "./block-handler";

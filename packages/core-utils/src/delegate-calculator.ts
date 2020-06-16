@@ -1,6 +1,6 @@
 import { app } from "@arkecosystem/core-container";
 import { Blockchain, State } from "@arkecosystem/core-interfaces";
-import { Utils } from "@tycoon69-labs/crypto";
+import { Utils } from "@arkecosystem/crypto";
 import { supplyCalculator } from "./index";
 
 const toDecimal = (voteBalance: Utils.BigNumber, totalSupply: Utils.BigNumber): number => {

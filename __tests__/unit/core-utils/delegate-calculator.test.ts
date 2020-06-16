@@ -3,7 +3,7 @@ import "./mocks/core-container-calculator";
 
 import { State } from "@arkecosystem/core-interfaces";
 import { Wallets } from "@arkecosystem/core-state";
-import { Utils } from "@tycoon69-labs/crypto";
+import { Utils } from "@arkecosystem/crypto";
 import { calculateApproval, calculateForgedTotal } from "../../../packages/core-utils/src/delegate-calculator";
 
 let delegate: Wallets.Wallet;

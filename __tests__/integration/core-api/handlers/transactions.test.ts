@@ -3,7 +3,7 @@ import "../../../utils";
 import { setUp, tearDown } from "../__support__/setup";
 import { utils } from "../utils";
 
-import { Identities } from "@tycoon69-labs/crypto";
+import { Identities } from "@arkecosystem/crypto";
 import { TransactionFactory } from "../../../helpers/transaction-factory";
 import { genesisBlock } from "../../../utils/config/testnet/genesisBlock";
 import { delegates } from "../../../utils/fixtures/testnet/delegates";

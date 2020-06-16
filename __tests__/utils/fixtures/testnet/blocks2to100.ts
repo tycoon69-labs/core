@@ -1,5 +1,5 @@
 /* tslint:disable */
-import { Utils } from "@tycoon69-labs/crypto";
+import { Utils } from "@arkecosystem/crypto";
 
 export const blocks2to100 = [
     {

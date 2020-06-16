@@ -4,7 +4,7 @@ import "../mocks/core-container";
 
 import { Database, State } from "@arkecosystem/core-interfaces";
 import { delegateCalculator } from "@arkecosystem/core-utils";
-import { Utils } from "@tycoon69-labs/crypto";
+import { Utils } from "@arkecosystem/crypto";
 import { WalletsBusinessRepository } from "../../../../packages/core-database/src";
 import { DatabaseService } from "../../../../packages/core-database/src/database-service";
 import { Wallet, WalletManager } from "../../../../packages/core-state/src/wallets";

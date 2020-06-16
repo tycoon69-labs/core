@@ -1,7 +1,7 @@
 import { app } from "@arkecosystem/core-container";
 import { Blockchain, Database, State } from "@arkecosystem/core-interfaces";
 import { delegateCalculator, roundCalculator, supplyCalculator } from "@arkecosystem/core-utils";
-import { Interfaces, Managers, Utils } from "@tycoon69-labs/crypto";
+import { Interfaces, Managers, Utils } from "@arkecosystem/crypto";
 
 const formatDelegates = (
     delegates: State.IWallet[],

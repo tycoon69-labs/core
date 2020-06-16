@@ -1,4 +1,4 @@
-import { Utils } from "@tycoon69-labs/crypto";
+import { Utils } from "@arkecosystem/crypto";
 import { genesisBlock } from "../../config/unitnet/genesisBlock";
 
 export { genesisBlock };

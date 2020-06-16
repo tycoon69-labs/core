@@ -1,4 +1,4 @@
-import { Interfaces } from "@tycoon69-labs/crypto";
+import { Interfaces } from "@arkecosystem/crypto";
 import { IWallet } from "../core-state";
 
 export interface IResponse<T> {

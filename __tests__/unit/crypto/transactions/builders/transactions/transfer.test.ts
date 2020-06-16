@@ -4,7 +4,7 @@ import { configManager } from "../../../../../../packages/crypto/src/managers";
 
 configManager.setFromPreset("testnet");
 
-import { Utils } from "@tycoon69-labs/crypto";
+import { Utils } from "@arkecosystem/crypto";
 import { TransactionType } from "../../../../../../packages/crypto/src/enums";
 import { VendorFieldLengthExceededError } from "../../../../../../packages/crypto/src/errors";
 import { Keys, WIF } from "../../../../../../packages/crypto/src/identities";

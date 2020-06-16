@@ -1,6 +1,6 @@
 import { DatabaseService } from "@arkecosystem/core-database";
 import { State } from "@arkecosystem/core-interfaces";
-import { Interfaces } from "@tycoon69-labs/crypto";
+import { Interfaces } from "@arkecosystem/crypto";
 
 export class MemoryDatabaseService extends DatabaseService {
     public constructor(public walletManager: State.IWalletManager) {

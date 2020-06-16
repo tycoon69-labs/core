@@ -1,4 +1,4 @@
-import { Validation } from "@tycoon69-labs/crypto";
+import { Validation } from "@arkecosystem/crypto";
 import { SocketErrors } from "../../enums";
 
 export const validate = (schema, data) => {

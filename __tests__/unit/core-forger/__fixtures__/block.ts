@@ -1,5 +1,5 @@
-import { Utils } from "@tycoon69-labs/crypto";
-import { Blocks, Managers } from "@tycoon69-labs/crypto";
+import { Utils } from "@arkecosystem/crypto";
+import { Blocks, Managers } from "@arkecosystem/crypto";
 
 Managers.configManager.setFromPreset("unitnet");
 

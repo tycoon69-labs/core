@@ -1,6 +1,6 @@
 import { Database, State } from "@arkecosystem/core-interfaces";
 import { delegateCalculator, expirationCalculator, hasSomeProperty } from "@arkecosystem/core-utils";
-import { Interfaces, Utils } from "@tycoon69-labs/crypto";
+import { Interfaces, Utils } from "@arkecosystem/crypto";
 import { searchEntries } from "./utils/search-entries";
 
 interface ISearchContext<T = any> {
@@ -263,22 +263,25 @@ export class WalletsBusinessRepository implements Database.IWalletsBusinessRepos
         };
 
         const entries: any[] = this.databaseServiceProvider()
-            .walletManager.getIndex("bridgechains")
-            .entries()
-            .reduce((acc, [genesisHash, wallet]) => {
-                const bridgechains: any[] = wallet.getAttribute("business.bridgechains");
-                if (bridgechains && bridgechains[genesisHash]) {
-                    const bridgechain: any = bridgechains[genesisHash];
+            .walletManager.getIndex("businesses")
+            .values()
+            .reduce((acc, wallet) => {
+                const bridgechains: Record<
+                    string,
+                    {
+                        bridgechainAsset: object;
+                        resigned?: boolean;
+                    }
+                > = wallet.getAttribute("business.bridgechains") || {};
 
-                    const bridgechainData = {
+                acc.push(
+                    ...Object.values(bridgechains).map(bridgechain => ({
                         publicKey: wallet.publicKey,
                         address: wallet.address,
                         ...bridgechain.bridgechainAsset,
                         isResigned: !!bridgechain.resigned,
-                    };
-
-                    acc.push(bridgechainData);
-                }
+                    })),
+                );
 
                 return acc;
             }, []);

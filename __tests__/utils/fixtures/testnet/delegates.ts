@@ -1,4 +1,4 @@
-import { Identities, Managers, Utils } from "@tycoon69-labs/crypto";
+import { Identities, Managers, Utils } from "@arkecosystem/crypto";
 
 Managers.configManager.setFromPreset("testnet");
 

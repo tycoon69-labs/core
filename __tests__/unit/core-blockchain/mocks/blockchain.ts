@@ -1,4 +1,4 @@
-import { Blocks, Interfaces, Managers } from "@tycoon69-labs/crypto";
+import { Blocks, Interfaces, Managers } from "@arkecosystem/crypto";
 import { database } from "./database";
 import { p2p } from "./p2p";
 import { transactionPool } from "./transactionPool";

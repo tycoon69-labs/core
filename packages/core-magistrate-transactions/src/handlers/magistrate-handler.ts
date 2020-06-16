@@ -1,5 +1,5 @@
 import { Handlers } from "@arkecosystem/core-transactions";
-import { Managers } from "@tycoon69-labs/crypto";
+import { Managers } from "@arkecosystem/crypto";
 
 export abstract class MagistrateTransactionHandler extends Handlers.TransactionHandler {
     public async isActivated(): Promise<boolean> {

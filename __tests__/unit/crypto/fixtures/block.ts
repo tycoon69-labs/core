@@ -1,4 +1,4 @@
-import { Utils } from "@tycoon69-labs/crypto";
+import { Utils } from "@arkecosystem/crypto";
 
 export const dummyBlock = {
     id: "17605317082329008056",

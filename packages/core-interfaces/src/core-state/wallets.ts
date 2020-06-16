@@ -1,4 +1,4 @@
-import { Interfaces, Utils } from "@tycoon69-labs/crypto";
+import { Interfaces, Utils } from "@arkecosystem/crypto";
 import { Logger, Shared } from "../index";
 import { IRoundInfo } from "../shared";
 

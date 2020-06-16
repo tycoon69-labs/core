@@ -1,4 +1,4 @@
-import { Enums, Errors, Transactions } from "@tycoon69-labs/crypto";
+import { Enums, Errors, Transactions } from "@arkecosystem/crypto";
 
 import assert from "assert";
 import { DeactivatedTransactionHandlerError, InvalidTransactionTypeError } from "../errors";
