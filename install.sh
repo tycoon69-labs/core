@@ -214,9 +214,9 @@ alias ark="$HOME/core-tycoon/packages/core/bin/run"
 echo 'alias tycoon="$HOME/core-tycoon/packages/core/bin/run"' >> ~/.bashrc
 
 rm -rf "$HOME/core-tycoon"
-git clone "https://github.com/ryuheimat/core.git" "$HOME/core-tycoon" || FAILED="Y"
+git clone "https://github.com/tycoon69-labs/core.git" "$HOME/core-tycoon" || FAILED="Y"
 if [ "$FAILED" == "Y" ]; then
-    echo "Failed to fetch core repo with origin 'https://github.com/ryuheimat/core.git'"
+    echo "Failed to fetch core repo with origin 'https://github.com/tycoon69-labs/core.git'"
 
     exit 1
 fi
